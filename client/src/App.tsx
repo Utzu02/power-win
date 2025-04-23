@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import LandingPage from "./routes/LandingPage";
 
+<<<<<<< Updated upstream
 function App() {
   return (
     <Routes>
@@ -13,3 +14,11 @@ function App() {
   );
 }
 export default App;
+=======
+import RafflePage from "./rafflePage";
+
+const App: React.FC = () => {
+  return <RafflePage />;
+};
+export default App
+>>>>>>> Stashed changes
