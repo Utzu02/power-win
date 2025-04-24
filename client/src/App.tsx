@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import LandingPage from "./routes/LandingPage";
 
-<<<<<<< Updated upstream
 function App() {
   return (
     <div className="main min-h-screen bg-[linear-gradient(45deg,var(--pw-grad-start),var(--pw-grad-end))]">
@@ -16,11 +15,3 @@ function App() {
   );
 }
 export default App;
-=======
-import RafflePage from "./rafflePage";
-
-const App: React.FC = () => {
-  return <RafflePage />;
-};
-export default App
->>>>>>> Stashed changes
