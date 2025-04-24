@@ -51,7 +51,7 @@ export const CompetitionInfo: FC<Props> = ({
 
       {alternativeCash && (
         <p className="text-primary-dim">
-          Alternativă&nbsp;Cash – ${alternativeCash.toLocaleString()}
+          Alternativă&nbsp;Cash - ${alternativeCash.toLocaleString()}
         </p>
       )}
 

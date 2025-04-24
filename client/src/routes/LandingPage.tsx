@@ -8,6 +8,11 @@ import { BrandQuestion } from "../components/BrandQuestion";
 import { TicketPurchase } from "../components/TicketPurchase";
 import { Button } from "../components/Button";
 import { CompetitionInfo } from "../components/CompetitionInfo";
+import RafflePage from "../components/rafflePage";
+import Footer from "../components/footer";
+import PowerWin from "../components/PowerWin";
+import { InstantWinWinners } from "../components/InstantWinWinners";
+import SpinWinModal from "../components/SpinWinModal";
 
 const mockCompetition: Competition = {
   id: "porsche-911-turbo-s-2022",
@@ -38,7 +43,7 @@ export default function LandingPage() {
     alert(`Ai cumpărat ${qty} bilete! Succes!`);
 
   return (
-    <div className="min-h-screen grid grid-rows-[auto_1fr] gap-8 p-6 text-white">
+    <div className="min-h-screen grid grid-rows-[auto_1fr] gap-8 text-white">
       <Header />
 
       <main className="flex">
@@ -90,7 +95,21 @@ export default function LandingPage() {
           </div>
 
         </section>
+
+       
       </main>
+
+      <section className="mb-10">
+          <RafflePage />
+      </section>
+      
+      <div className="flex flex-wrap">
+        <PowerWin />
+        <SpinWinModal />
+      </div>
+
+
+      <Footer />
     </div>
   );
 }
