@@ -19,7 +19,7 @@ export const CompetitionInfo: FC<Props> = ({
   soldTickets,
 }) => {
   const [left, setLeft] = useState(getLeft());
-    Math.floor(Math.random() * (max - min + 1)) + min;
+
   function getLeft() {
     const diff = dayjs(endsAt).diff(dayjs());
     const d = dayjs.duration(diff);
