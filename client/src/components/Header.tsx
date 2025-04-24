@@ -41,7 +41,9 @@ export const Header = () => (
       </Link>
 
       {/* NOTCH NAV CENTERED */}
+
       <nav className={`flex gap-6 px-6 ${pill} flex-1 justify-center`}>
+     
         {[
           ["Home", "/"],
           ["Competitions", "/competitions"],
@@ -53,7 +55,7 @@ export const Header = () => (
             to={path}
             className={({ isActive }) =>
               [
-                "px-4 text-base transition-colors",
+                "px-8 py-4 text-base transition-colors",
                 isActive
                   ? "bg-white/20 text-white rounded-full py-2"
                   : "text-neutral-300 hover:bg-white/10 hover:text-white rounded-full py-2",
