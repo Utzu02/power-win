@@ -40,12 +40,18 @@ export const CompetitionInfo: FC<Props> = ({
   const percent = (soldTickets / totalTickets) * 100;
 
   return (
-    <section className="space-y-6">
+    <section className="space-y-5 w-[45vw]">
+      
       {/* title & badge */}
-      <div className="flex items-start gap-4">
-        <h1 className="text-4xl font-bold underline decoration-accent/70">{title}</h1>
-        <span className="px-4 py-1 rounded-full text-sm bg-green-600/80">
-          🟢 În desfășurare
+      <div className="flex items-center gap-4">
+        <h1 className="text-4xl font-medium decoration-accent/70">
+          {title}
+        </h1>
+        <span className="flex px-4 mt-1.5 ml-3 py-1.5 rounded-md text-sm bg-[linear-gradient(to_bottom,rgb(39,100,48),rgba(47,59,50,0.5))]">
+          <svg width="24" height="16" viewBox="0 0 24 18" className="mr-2 mt-0.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.1795 0.319856C5.07936 0.219833 4.96007 0.140107 4.82844 0.0852336C4.69681 0.03036 4.55542 0.00141417 4.41236 5.05369e-05C4.2693 -0.0013131 4.12737 0.0249318 3.99467 0.0772859C3.86197 0.12964 3.74112 0.207077 3.639 0.305172C2.48426 1.42957 1.56823 2.76655 0.943678 4.23906C0.319128 5.71157 -0.0015888 7.2905 6.20008e-06 8.88489C-0.00168874 10.5405 0.344147 12.1788 1.01606 13.6981C1.68797 15.2174 2.67163 16.5854 3.906 17.7172C4.11378 17.9052 4.38824 18.0065 4.67111 17.9997C4.95398 17.9928 5.22298 17.8783 5.421 17.6805C5.895 17.2164 5.8365 16.4779 5.3805 16.0506C4.38975 15.1263 3.60134 14.0144 3.06318 12.7826C2.52502 11.5507 2.24836 10.2246 2.25001 8.88489C2.25001 6.17427 3.3615 3.71621 5.1645 1.92773C5.5995 1.49456 5.6445 0.775052 5.1795 0.319856ZM7.821 2.9086C7.62345 2.70962 7.35338 2.59541 7.06996 2.59101C6.78655 2.5866 6.51291 2.69236 6.309 2.88511C5.49723 3.66901 4.8529 4.60319 4.41357 5.63325C3.97423 6.66331 3.74866 7.76865 3.75 8.88489C3.75 11.3694 4.845 13.6028 6.5895 15.1475C6.79556 15.3254 7.06364 15.4188 7.33816 15.4084C7.61268 15.398 7.87259 15.2846 8.064 15.0917C8.556 14.6101 8.4645 13.8524 8.0025 13.4266C7.36943 12.8437 6.86512 12.1399 6.5207 11.3588C6.17629 10.5776 5.99907 9.73568 6 8.88489C6 7.19626 6.6855 5.66327 7.8 4.5385C8.229 4.1068 8.2995 3.37554 7.821 2.9086ZM16.179 2.90713C16.3765 2.70815 16.6466 2.59394 16.93 2.58954C17.2135 2.58513 17.4871 2.69089 17.691 2.88364C18.503 3.66771 19.1474 4.60213 19.5867 5.63246C20.0261 6.66279 20.2515 7.7684 20.25 8.88489C20.25 11.3694 19.155 13.6028 17.4105 15.1475C17.2044 15.3254 16.9364 15.4188 16.6618 15.4084C16.3873 15.398 16.1274 15.2846 15.936 15.0917C15.444 14.6101 15.5355 13.8524 15.9975 13.4266C16.6306 12.8437 17.1349 12.1399 17.4793 11.3588C17.8237 10.5776 18.0009 9.73568 18 8.88489C18 7.19626 17.3145 5.66327 16.2 4.5385C15.771 4.1068 15.7005 3.37408 16.179 2.90713ZM18.8205 0.319856C18.9206 0.219833 19.0399 0.140107 19.1716 0.0852336C19.3032 0.03036 19.4446 0.00141417 19.5876 5.05369e-05C19.7307 -0.0013131 19.8726 0.0249318 20.0053 0.0772859C20.138 0.12964 20.2589 0.207077 20.361 0.305172C21.5157 1.42957 22.4318 2.76655 23.0563 4.23906C23.6809 5.71157 24.0016 7.2905 24 8.88489C24.0017 10.5405 23.6559 12.1788 22.9839 13.6981C22.312 15.2174 21.3284 16.5854 20.094 17.7172C19.8862 17.9052 19.6118 18.0065 19.3289 17.9997C19.046 17.9928 18.777 17.8783 18.579 17.6805C18.105 17.2164 18.1635 16.4779 18.621 16.0506C19.6115 15.1261 20.3996 14.0142 20.9375 12.7824C21.4754 11.5506 21.7518 10.2245 21.75 8.88489C21.75 6.17427 20.6385 3.71621 18.8355 1.92773C18.4005 1.49456 18.3555 0.775052 18.8205 0.319856ZM12 6.68233C11.4033 6.68233 10.831 6.91438 10.409 7.32744C9.98705 7.7405 9.75 8.30073 9.75 8.88489C9.75 9.46904 9.98705 10.0293 10.409 10.4423C10.831 10.8554 11.4033 11.0875 12 11.0875C12.5967 11.0875 13.169 10.8554 13.591 10.4423C14.0129 10.0293 14.25 9.46904 14.25 8.88489C14.25 8.30073 14.0129 7.7405 13.591 7.32744C13.169 6.91438 12.5967 6.68233 12 6.68233Z" fill="white" />
+          </svg>
+          În desfășurare
         </span>
       </div>
 
@@ -57,23 +63,28 @@ export const CompetitionInfo: FC<Props> = ({
 
       {/* countdown */}
       <div>
-        <p className="mb-1">Competiţia se termină în:</p>
-        <div className="flex gap-4 text-3xl font-medium">
+        <p className="mb-2 mt-10">Competiţia se termină în:</p>
+        <div className="flex gap-10 mb-10 text-3xl font-medium">
           <TimeBox value={left.days} label="Zile" />
           <TimeBox value={left.hours} label="Oră" />
           <TimeBox value={left.minutes} label="Minute" />
           <TimeBox value={left.seconds} label="Secunde" />
+          <div className="p-[1px] rounded-md bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit transition duration-200">
+            <button className="flex justify-center align-middle bg-[linear-gradient(to_top,rgb(45,45,45),rgba(100,100,100,0.5))] hover:bg-[rgb(68,68,68)] text-white text-sm font-light px-3 py-1.5 rounded-md w-full h-full transition duration-200 cursor-pointer">
+              Extragere Live
+            </button>
+          </div>
         </div>
       </div>
 
       {/* bullet-uri info */}
-      <ul className="space-y-2">
+      <ul className="space-y-3.5">
         <li className="flex items-center gap-2">
           <span>🎥</span>
           <span>
             Extragera va fi ținută în direct pe{' '}
-            <a href="#" className="underline">Facebook</a> și{' '}
-            <a href="#" className="underline">YouTube</a>
+            <a href="#" className="underline font-medium">Facebook</a> și{' '}
+            <a href="#" className="underline font-medium">YouTube</a>
           </span>
         </li>
         <li className="flex items-center gap-2">
@@ -82,60 +93,81 @@ export const CompetitionInfo: FC<Props> = ({
         </li>
         <li className="flex items-center gap-2">
           <span>🎫</span>
-          <span>{totalTickets.toLocaleString()} bilete</span>
+          <span><b>{totalTickets.toLocaleString()}</b> bilete</span>
         </li>
       </ul>
-
-      {/* progress bar section */}
-      <div className="space-y-2">
-        <div className="flex justify-between items-center">
-          <div className="text-lg font-semibold">
+      {/* Action Buttons - styled and spaced */}
+      <div className="flex gap-4 mt-10 mb-2">
+        <div className="p-[1px] mb-6 rounded-md bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit transition duration-200">
+          <button className="flex bg-[linear-gradient(to_top,rgb(45,45,45),rgba(100,100,100,0.5))] hover:bg-[rgb(68,68,68)] text-white text-sm font-light px-4 py-1.5 rounded-md w-full h-full transition duration-200 cursor-pointer">
+            Intrare Poștală Gratis
+            <svg width="12" height="23" viewBox="0 0 24 23" className="ml-2.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 22L22.5 1M22.5 1L22.5 16.75M22.5 1L6.75 0.999999" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div className="p-[1px] mb-6 rounded-md bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit transition duration-200">
+          <button className="flex bg-[linear-gradient(to_top,rgb(45,45,45),rgba(100,100,100,0.5))] hover:bg-[rgb(68,68,68)] text-white text-sm font-light px-4 py-1.5 rounded-md w-full h-full transition duration-200 cursor-pointer">
             Reguli Giveaway
-          </div>
-          <div className="text-xl font-bold">
-            {percent.toFixed(2).replace('.', ',')}%
-          </div>
-        </div>
-
-        {/* thicker progress bar with gray start */}
-        <div className="relative w-full h-4 border border-white/30 rounded-full bg-white/5 overflow-hidden">
-          {/* tick marks */}
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                'repeating-linear-gradient(to right, transparent, transparent 4px, rgba(255,255,255,0.2) 4px, rgba(255,255,255,0.2) 5px)',
-            }}
-          />
-          {/* filled gradient - from gray to accent to red */}
-          <div
-            style={{ width: `${percent}%` }}
-            className="h-full bg-gradient-to-r from-gray-400 via-accent to-red-500 transition-all duration-500"
-          />
-          
-          {/* pin marker */}
-          <div
-            className="absolute inset-1 -top-1.5 left-0 w-0 h-0 
-                      border-l-4 border-r-4 border-b-8
-                      border-l-transparent border-r-transparent border-b-red-500"
-            style={{ left: `calc(${Math.floor(percent)}% - 4px)` }}
-          />
-        </div>
-
-        {/* ticket count below */}
-        <div className="flex justify-between text-sm">
-          <span>0</span>
-          <span>{soldTickets.toLocaleString()}/{totalTickets.toLocaleString()}</span>
-          <span>{totalTickets.toLocaleString()}</span>
+            <svg width="12" height="23" viewBox="0 0 24 23" className="ml-2.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 22L22.5 1M22.5 1L22.5 16.75M22.5 1L6.75 0.999999" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
         </div>
       </div>
+      {/* progress bar section */}
+      <div className="space-y-2.5 mt-20">
+        {/* bara de progres */}
+        <div className="relative w-full h-5 bg-gradient-to-r from-gray-40">
+          {/* efectul cu linii */}
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage:
+                'repeating-linear-gradient(to right, transparent, transparent 4px, rgba(255,255,255,0.15) 4px, rgba(255,255,255,0.15) 5px)',
+            }}
+          />
+
+          {/* progresul */}
+          <div
+            className="absolute top-0 left-0 rounded-full  h-full z-10 bg-gradient-to-r from-gray-400 to-red-800"
+            style={{ width: `${percent}%` }}
+          />
+
+          {/* indicator */}
+          <div
+            className="absolute mt-[-90px] flex-row justify-center align-middle top-0 transform z-20"
+            style={{ left: `calc(${percent}%)` }}
+          >
+              <div className="text-2xl font-small ml-[-30px] z-20 tracking-tight">
+                {percent.toFixed(2).replace('.', ',')}%
+              </div>
+              <svg width="3" height="45" viewBox="0 0 4 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2 60C0.89543 60 -3.91405e-08 59.1046 -8.74228e-08 58L-2.53526e-06 2C-2.58354e-06 0.895432 0.895428 3.77556e-06 2 3.72727e-06C3.10457 3.67899e-06 4 0.895431 4 2L4 58C4 59.1046 3.10457 60 2 60Z" fill="url(#paint0_linear_26_2902)" />
+                <defs>
+                  <linearGradient id="paint0_linear_26_2902" x1="2.5" y1="2" x2="2.5" y2="84.5" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#951717" stop-opacity="0" />
+                    <stop offset="1" stop-color="#951717" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
+          </div>
+        </div>
+
+        {/* contor centrat jos */}
+        <div className="text-center mt-3 text-lg font-small">
+          {soldTickets.toLocaleString()}/{totalTickets.toLocaleString()}
+        </div>
+      </div>
+
     </section>
   );
 };
 
 const TimeBox: FC<{ value: number; label: string }> = ({ value, label }) => (
-  <div className="text-center">
-    <div className="leading-none">{value.toString().padStart(2, '0')}</div>
-    <div className="text-xs uppercase tracking-wide">{label}</div>
+  <div className="flex alig-middle mt-1 justify-center text-center">
+    <div className=" text-2xl">{value.toString().padStart(2, '0')}</div>
+    <div className="ml-1.5 mt-3 text-[14px] tracking-wide">{label}</div>
   </div>
 );

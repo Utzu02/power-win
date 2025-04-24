@@ -3,7 +3,7 @@ import LandingPage from "./routes/LandingPage";
 
 function App() {
   return (
-    <div className="main min-h-screen bg-[linear-gradient(45deg,var(--pw-grad-start),var(--pw-grad-end))]">
+    <div className="main min-h-screen bg-[linear-gradient(135deg,var(--pw-grad-start),var(--pw-grad-end))]">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         {/* Placeholder routes for future pages */}

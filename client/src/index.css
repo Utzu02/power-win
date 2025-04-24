@@ -1,7 +1,10 @@
 @import "tailwindcss";
 @tailwind utilities;
 @import "./styles/colors.css";
-
+html, body {
+  overflow-x: hidden;
+  margin: 0 auto;
+}
 #root {
   background-color: #252525;
 }

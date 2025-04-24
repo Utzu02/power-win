@@ -32,17 +32,17 @@ const Cart = ({ s = 18 }: { s?: number }) => (
 const pill = "rounded-bl-[40px] rounded-br-[40px] border border-white/20 bg-card py-2";
 
 export const Header = () => (
-  <header className="w-full px-6 py-4 text-white">
+  <header className="w-full px-4 text-white">
     <div className="flex items-center justify-between gap-8">
       {/* LOGO LEFT */}
       <Link to="/" className="flex items-center gap-3 shrink-0">
         <img src={logo} alt="PowerWin" className="w-[60px] h-auto" />
-        <span className="hidden sm:inline text-2xl font-semibold">POWER&nbsp;WIN</span>
+        <span className="hidden sm:inline text-2xl text-black font-semibold">POWER&nbsp;WIN</span>
       </Link>
 
       {/* NOTCH NAV CENTERED */}
 
-      <nav className={`flex gap-6 px-6 ${pill} flex-1 justify-center`}>
+      <nav className={`flex gap-6 px-8 ${pill} justify-center bg-zinc-900`}>
      
         {[
           ["Home", "/"],
@@ -70,7 +70,7 @@ export const Header = () => (
       {/* RIGHT GROUP */}
       <div className="flex items-center gap-6 shrink-0">
         {/* WALLET */}
-        <div className="rounded-[32px] border border-white/20 bg-card px-4 py-3 text-sm text-left">
+        <div className="rounded-[50px] border border-white/20 bg-card px-4 py-3 text-sm text-left ">
           <div className="flex items-center gap-2 mb-1">
             <Wallet s={14} />
             <span className="font-medium">Wallet</span>
@@ -86,7 +86,7 @@ export const Header = () => (
         </div>
 
         {/* PROFILE */}
-        <div className="rounded-[32px] border border-white/20 bg-card px-4 py-3 text-center text-sm">
+        <div className="rounded-[32px] border border-white/20 bg-card px-4 py-3 text-center text-sm bg-[linear-gradient(90deg,var(--pw-button-primary-color),var(--pw-button-secondary-color))]">
           <User s={16} />
           <div className="font-medium mt-1">John&nbsp;Doe</div>
           <div className="opacity-60 text-xs">johndoe@gmail.com</div>
@@ -94,10 +94,10 @@ export const Header = () => (
 
         {/* LANGUAGE & CART STACKED */}
         <div className="flex flex-col items-center gap-4">
-          <button className="rounded-[32px] border border-white/20 bg-card px-4 py-3 text-sm">
+          <button className="rounded-[32px] border border-white/20 bg-card px-4 py-3 text-sm  bg-[linear-gradient(90deg,var(--pw-button-primary-color),var(--pw-button-secondary-color))]">
             EN
           </button>
-          <button className="rounded-[32px] border border-white/20 bg-card p-3">
+          <button className="rounded-[32px] border border-white/20 bg-card p-3 bg-[linear-gradient(90deg,var(--pw-button-primary-color),var(--pw-button-secondary-color))]">
             <Cart s={18} />
           </button>
         </div>

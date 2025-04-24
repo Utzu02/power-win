@@ -27,13 +27,19 @@ const mockCompetition: Competition = {
   totalTickets: 45000,
   soldTickets: 30735,
   endsAt: new Date(Date.now() + 19 * 24 * 60 * 60 * 1000).toISOString(),
+
+  // 🔽 PATHURI RELATIVE către public/assets/images
   images: [
-    "https://images.pexels.com/photos/11546171/pexels-photo-11546171.jpeg?auto=compress",
-    "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress",
-    "https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress",
+    "/assets/images/side.png",
+    "/assets/images/preview1.png",
+    "/assets/images/preview2.png",
+    "/assets/images/preview3.png",
+    "/assets/images/preview4.png",
   ],
+
   description: [/* ... */],
 };
+
 
 export default function LandingPage() {
   const [selectedAnswer, setSelectedAnswer] = useState<number>();
@@ -43,14 +49,14 @@ export default function LandingPage() {
     alert(`Ai cumpărat ${qty} bilete! Succes!`);
 
   return (
-    <div className="min-h-screen grid grid-rows-[auto_1fr] gap-8 text-white">
+    <div className="min-h-screen grid grid-rows-[auto_1fr] text-white">
       <Header />
 
-      <main className="flex">
-        <section className="space-y-8 w-full">
-          <div className="flex flex-col md:flex-row items-start gap-8">
+      <main className="flex max-w-[100vw]">
+        <section className="space-y-8 w-full px-12">
+          <div className="flex flex-col md:flex-row items-start">
             {/* Text + padding */}
-            <div className="flex-1 px-6">
+            <div className="flex-1 w-[45vw]">
               <CompetitionInfo
                 title={mockCompetition.title}
                 alternativeCash={mockCompetition.alternativeCash}
@@ -61,39 +67,12 @@ export default function LandingPage() {
             </div>
 
             {/* Carousel larger */}
-            <div className="w-full md:w-3/5 lg:w-2/5">
+            <div className="w-[45vw]">
               <ImageCarousel images={mockCompetition.images} />
             </div>
           </div>
 
-          {/* Action Buttons - styled and spaced */}
-          <div className="flex justify-between px-6">
-            <Button
-              variant="secondary"
-              className="border border-white/50 bg-transparent text-white px-4 py-2 rounded-lg"
-            >
-              Intrare Poștală Gratis →
-            </Button>
-            <Button
-              variant="secondary"
-              className="border border-white/50 bg-transparent text-white px-4 py-2 rounded-lg"
-            >
-              Reguli Giveaway →
-            </Button>
-          </div>
-
-          {/* Progress Bar with count below */}
-          <div className="space-y-2 px-6">
-            <ProgressBar
-              percentage={(mockCompetition.soldTickets / mockCompetition.totalTickets) * 100}
-            />
-            <p className="text-center text-sm">{
-              `${mockCompetition.soldTickets.toLocaleString()} / ${
-                mockCompetition.totalTickets.toLocaleString()
-              }`
-            }</p>
-          </div>
-
+          
         </section>
 
        

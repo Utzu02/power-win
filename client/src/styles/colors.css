@@ -8,5 +8,7 @@
     --pw-accent-light: #ff465a; /* roşu hover */
     --pw-grad-start: #383939; /* rgb(56,57,57)  */
     --pw-grad-end:   #1c1c1d; /* rgb(28,28,29) */
+    --pw-button-primary-color: #454445;
+    --pw-button-secondary-color: #3B3A3B;
   }
   
