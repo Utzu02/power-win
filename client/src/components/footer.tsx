@@ -12,9 +12,9 @@ export default function Footer() {
             <div className="w-full px-4 md:px-16">
                 <div className="flex flex-col md:flex-row justify-between gap-12 pb-8">
                     {/* Logo & info */}
-                    <div className="flex flex-col gap-0.5 text-white text-sm">
-                        <div className="flex items-center gap-4 mb-5">
-                            <svg width="48" height="44" viewBox="0 0 96 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div className="flex flex-col gap-0.2 text-white text-sm">
+                        <div className="flex items-center gap-4 cursor-pointer mb-5">
+                            <svg width="48" height="44" viewBox="0 0 96 89 " fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M81.9624 32.1738L66.4352 57.396L73.1297 68.5603L96 32.1738H81.9624Z" fill="url(#paint0_linear_67_29)" />
                                 <path d="M14.0418 32.1738L43.2134 77.0989L35.7238 89.0001L0 32.1738H14.0418Z" fill="url(#paint1_linear_67_29)" />
                                 <path d="M72.9875 32.1737L49.0753 0L25.1632 32.1737L60.8829 89L68.3724 77.0987L56.0293 58.091L72.9875 32.1737ZM39.2009 32.1737L49.0753 18.4256L59.1297 32.1737L49.4561 47.9653L39.2009 32.1737Z" fill="url(#paint2_linear_67_29)" />
@@ -42,20 +42,20 @@ export default function Footer() {
                     </div>
 
                     {/* Linkuri Navigație */}
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-14 text-white text-sm md:text-base">
-                        <ul className="flex flex-col gap-3">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-15 text-white text-sm md:text-base">
+                        <ul className="flex flex-col gap-3.5">
                             <li className="hover:text-gray-300 cursor-pointer">Acasă</li>
                             <li className="hover:text-gray-300 cursor-pointer">Câștigători</li>
                             <li className="hover:text-gray-300 cursor-pointer">Întrebări Frecvente (FAQ)</li>
                             <li className="hover:text-gray-300 cursor-pointer">Contul Meu</li>
                         </ul>
-                        <ul className="flex flex-col gap-3">
+                        <ul className="flex flex-col gap-3.5">
                             <li className="hover:text-gray-300 cursor-pointer">Aplicație Mobilă</li>
                             <li className="hover:text-gray-300 cursor-pointer">Refferal Win</li>
                             <li className="hover:text-gray-300 cursor-pointer">Extrageri Live</li>
                             <li className="hover:text-gray-300 cursor-pointer">Despre Noi</li>
                         </ul>
-                        <ul className="flex flex-col gap-3">
+                        <ul className="flex flex-col gap-3.5">
                             <li className="hover:text-gray-300 cursor-pointer">Competiții</li>
                             <li className="hover:text-gray-300 cursor-pointer">Participare Prin Poștă</li>
                             <li className="hover:text-gray-300 cursor-pointer">Contact</li>
@@ -64,7 +64,7 @@ export default function Footer() {
 
                     {/* Buton Telegram */}
                     <div className="flex items-start justify-center md:justify-start">
-                        <button className="bg-[#2177BC] hover:bg-[#1d6aa9] text-white rounded-xl pr-6 pl-4.5 py-3 text-base md:text-lg flex items-center gap-5">
+                        <button className="bg-[#2177BC] hover:bg-[#1d6aa9] text-white rounded-xl pr-6 pl-4.5 py-3 text-base md:text-lg flex items-center cursor-pointer gap-5">
                             <FaTelegramPlane className="text-3xl" /> Join Telegram
                         </button>
                     </div>

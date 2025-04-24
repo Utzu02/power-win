@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Footer from './components/footer' // ✅ Asta e linia corectă
+import SpinWinModal from './components/SpinWinModal';
+import PowerWin from './components/PowerWin'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -30,7 +32,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-
+      <div className='flex flex-wrap gap-10'>
+        <SpinWinModal />
+        <PowerWin />
+      </div>
       <Footer /> {/* ✅ Componenta Footer */}
     </>
   )
