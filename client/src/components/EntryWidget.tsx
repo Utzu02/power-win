@@ -13,7 +13,7 @@ export default function EntryWidget({ tickets, onTicketsChange }: EntryWidgetPro
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
 
   return (
-    <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit max-h-[50vh] mt-10 mx-auto overflow-hidden">
+    <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit mt-10 mx-auto overflow-hidden">
       <div className="p-6 bg-[#1f1f1f] border border-gray-700 rounded-xl w-fit mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
@@ -26,17 +26,19 @@ export default function EntryWidget({ tickets, onTicketsChange }: EntryWidgetPro
         {/* Brand buttons */}
         <div className="flex space-x-4 mb-8">
           {brands.map((b) => (
-            <button
-              key={b}
-              onClick={() => setSelectedBrand(b)}
-              className={`bg-[rgb(58,58,58)] hover:bg-[rgb(68,68,68)] text-white text-sm font-light px-5 py-1.5 rounded-md w-full h-full transition duration-200 cursor-pointer ${
-                selectedBrand === b
-                  ? 'bg-gradient-to-b from-black to-gray-900 text-white'
-                  : 'bg-transparent text-white border-gray-600 hover:border-gray-500'
-              } transition`}
+
+            <div className="p-[1px] flex-1 mb-6 rounded-md bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] h-full w-fit transition duration-200">
+            <button 
+              key={b} onClick={() => setSelectedBrand(b)} 
+              className={
+                selectedBrand === b ?
+                  "bg-[rgb(58,58,58)] hover:bg-[rgb(68,68,68)] text-white w-full h-full text-lg font-light px-5 py-5 rounded-md transition duration-200 cursor-pointer" :
+                  "bg-[rgb(58,58,58)] hover:bg-[rgb(68,68,68)] text-white w-full h-full text-lg font-light px-5 py-5 rounded-md transition duration-200 cursor-pointer"
+              }
             >
-              {b}
+                {b}
             </button>
+            </div>
           ))}
         </div>
 

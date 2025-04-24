@@ -32,7 +32,7 @@ export default function SpinInstantWidget({
   }, [tickets]);
 
   return (
-    <div className=" ml-8 mr-23 p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit max-h-[50vh] mt-10 mx-auto overflow-visible">
+    <div className=" ml-8 mr-23 p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit h-auto mt-10 mx-auto overflow-hidden">
     <div
       className="
         p-4 border border-gray-700 rounded-lg

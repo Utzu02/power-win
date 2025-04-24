@@ -13,7 +13,8 @@ import Footer from "../components/footer";
 import PowerWin from "../components/PowerWin";
 import { InstantWinWinners } from "../components/InstantWinWinners";
 import SpinWinModal from "../components/SpinWinModal";
-
+const getRandomNumber = (min: number, max: number): number =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
 const mockCompetition: Competition = {
   id: "porsche-911-turbo-s-2022",
   title: "Porsche 911 Turbo S 2022",
@@ -24,8 +25,8 @@ const mockCompetition: Competition = {
     answers: ["Audi", "Porsche", "BMW"],
     correctIndex: 1,
   },
-  totalTickets: 45000,
-  soldTickets: 30735,
+  totalTickets: getRandomNumber(50000,100000),
+  soldTickets: getRandomNumber(10000,50000),
   endsAt: new Date(Date.now() + 19 * 24 * 60 * 60 * 1000).toISOString(),
 
   // 🔽 PATHURI RELATIVE către public/assets/images
@@ -78,7 +79,7 @@ export default function LandingPage() {
        
       </main>
 
-      <section className="mb-10">
+      <section className="">
           <RafflePage />
       </section>
       
