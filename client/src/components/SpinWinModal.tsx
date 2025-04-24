@@ -35,7 +35,7 @@ const SpinWinModal: React.FC = () => {
                 <div className="overflow-y-auto max-h-[30vh] custom-scrollbar pr-10 ">
                     <div className="bg-[#171717] z-10 sticky top-0 pb-3">
                         {/* Header fix */}
-                        <div className="grid grid-cols-[2fr_1fr_1fr]  text-white text-xs sm:text-sm font-small pb-2">
+                        <div className="grid grid-cols-[2fr_1fr_1fr]  text-white text-xs sm:text-sm logomedium pb-2">
                             <div>Participanți</div>
                             <div className="">Nr. Bilete</div>
                             <div className="text-right">Nr. Comandă</div>

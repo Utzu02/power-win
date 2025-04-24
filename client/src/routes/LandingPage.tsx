@@ -83,7 +83,7 @@ export default function LandingPage() {
           <RafflePage />
       </section>
       
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap mb-[15vh]">
         <PowerWin />
         <SpinWinModal />
       </div>
