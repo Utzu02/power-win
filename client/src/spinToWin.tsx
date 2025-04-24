@@ -8,7 +8,7 @@ interface SpinToWinProps {
 export default function SpinToWin({ chance }: SpinToWinProps) {
   const percentage = Math.max(0, Math.min(100, chance));
   return (
-    <div className="border border-gray-700 p-4 rounded text-center">
+    <div className="p-4 rounded text-center">
       <div className="relative w-48 h-48 mx-auto">
         <svg viewBox="0 0 36 36" className="w-full h-full">
           {/* cerc de fundal */}
@@ -36,9 +36,7 @@ export default function SpinToWin({ chance }: SpinToWinProps) {
           {percentage}%
         </div>
       </div>
-      <button className="mt-4 px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition">
-        Demo Spin
-      </button>
+    
     </div>
   );
 }
