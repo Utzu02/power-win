@@ -1,0 +1,12 @@
+/* definiții CSS-vars – le putem schimba oricând fără să atingem codul */
+:root {
+    --pw-bg: #f5f6fa;           /* fundal general aplicaţie */
+    --pw-surface: #ffffff;      /* carduri / suprafeţe ridicate */
+    --pw-text: #0f172a;         /* text primar */
+    --pw-text-dim: #4b5563;     /* text secundar */
+    --pw-accent: #d7263d;       /* roşu brand */
+    --pw-accent-light: #ff465a; /* roşu hover */
+    --pw-grad-start: #383939; /* rgb(56,57,57)  */
+    --pw-grad-end:   #1c1c1d; /* rgb(28,28,29) */
+  }
+  

@@ -6,8 +6,8 @@ import { ImageCarousel } from "../components/ImageCarousel";
 import { ProgressBar } from "../components/ProgressBar";
 import { BrandQuestion } from "../components/BrandQuestion";
 import { TicketPurchase } from "../components/TicketPurchase";
-import { SpinToWin } from "../components/SpinToWin";
-import { InstantWinWinners } from "../components/InstantWinWinners";
+import { Button } from "../components/Button";
+import { CompetitionInfo } from "../components/CompetitionInfo";
 
 const mockCompetition: Competition = {
   id: "porsche-911-turbo-s-2022",
@@ -21,79 +21,75 @@ const mockCompetition: Competition = {
   },
   totalTickets: 45000,
   soldTickets: 30735,
-  endsAt: new Date(Date.now() + 1000 * 60 * 60 * 24 * 19).toISOString(),
+  endsAt: new Date(Date.now() + 19 * 24 * 60 * 60 * 1000).toISOString(),
   images: [
     "https://images.pexels.com/photos/11546171/pexels-photo-11546171.jpeg?auto=compress",
     "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress",
     "https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress",
   ],
-  description: [
-    "Sport button",
-    "Adecvă să scaune Sport incl. reglaj scaun 18‑cai și pachet Memory",
-    "Airbag cortină față (Thoraxbag)",
-    "Airbaguri pe partea pilotului / copilotului",
-    "Airbag în cortină Porsche Side Impact Protection System (POSIP) pe partea spate",
-    "Colanise 2+2",
-    "Connect Plus (Bluetooth, Apple CarPlay, WLAN, VehicleTracking‑System – sistem localizare vehicul)",
-    "Cutie automată pentru lumina de drum",
-    "Viteze viteză 8 viteze – cutie viteză cu ambreiaj dublu (PDK)",
-  ],
+  description: [/* ... */],
 };
 
 export default function LandingPage() {
   const [selectedAnswer, setSelectedAnswer] = useState<number>();
   const [spinChance, setSpinChance] = useState(70);
-  const [winners, setWinners] = useState<Participant[]>([]);
 
-  const handlePurchase = (qty: number) => {
+  const handlePurchase = (qty: number) =>
     alert(`Ai cumpărat ${qty} bilete! Succes!`);
-  };
-
-  const handleSpin = () => {
-    const win = Math.random() < spinChance / 100;
-    if (win) alert("Ai câștigat! Felicitări!");
-    setSpinChance(Math.max(5, spinChance - 10));
-  };
 
   return (
-    <div className="min-h-screen grid grid-rows-[auto_1fr] gap-8 mx-auto p-6">
+    <div className="min-h-screen grid grid-rows-[auto_1fr] gap-8 p-6 text-white">
       <Header />
 
-      <main className="grid lg:grid-cols-3 gap-8">
-        {/* LEFT COLUMN */}
-        <section className="space-y-6 lg:col-span-2">
-          <ImageCarousel images={mockCompetition.images} />
+      <main className="flex">
+        <section className="space-y-8 w-full">
+          <div className="flex flex-col md:flex-row items-start gap-8">
+            {/* Text + padding */}
+            <div className="flex-1 px-6">
+              <CompetitionInfo
+                title={mockCompetition.title}
+                alternativeCash={mockCompetition.alternativeCash}
+                endsAt={mockCompetition.endsAt}
+                totalTickets={mockCompetition.totalTickets}
+                soldTickets={mockCompetition.soldTickets}
+              />
+            </div>
 
-          <div className="flex items-end justify-between">
-            <h1 className="text-3xl font-bold">{mockCompetition.title}</h1>
-            <span className="text-4xl font-semibold text-accent">
-              £{mockCompetition.pricePerTicket.toFixed(2)}
-            </span>
+            {/* Carousel larger */}
+            <div className="w-full md:w-3/5 lg:w-2/5">
+              <ImageCarousel images={mockCompetition.images} />
+            </div>
           </div>
 
-          <ProgressBar
-            percentage={
-              (mockCompetition.soldTickets / mockCompetition.totalTickets) * 100
-            }
-          />
+          {/* Action Buttons - styled and spaced */}
+          <div className="flex justify-between px-6">
+            <Button
+              variant="secondary"
+              className="border border-white/50 bg-transparent text-white px-4 py-2 rounded-lg"
+            >
+              Intrare Poștală Gratis →
+            </Button>
+            <Button
+              variant="secondary"
+              className="border border-white/50 bg-transparent text-white px-4 py-2 rounded-lg"
+            >
+              Reguli Giveaway →
+            </Button>
+          </div>
 
-          <BrandQuestion
-            {...mockCompetition.brandQuestion}
-            selected={selectedAnswer}
-            onAnswer={setSelectedAnswer}
-          />
+          {/* Progress Bar with count below */}
+          <div className="space-y-2 px-6">
+            <ProgressBar
+              percentage={(mockCompetition.soldTickets / mockCompetition.totalTickets) * 100}
+            />
+            <p className="text-center text-sm">{
+              `${mockCompetition.soldTickets.toLocaleString()} / ${
+                mockCompetition.totalTickets.toLocaleString()
+              }`
+            }</p>
+          </div>
 
-          <TicketPurchase
-            price={mockCompetition.pricePerTicket}
-            onPurchase={handlePurchase}
-          />
         </section>
-
-        {/* RIGHT COLUMN */}
-        <aside className="space-y-6">
-          <SpinToWin chance={spinChance} onSpin={handleSpin} />
-          <InstantWinWinners winners={winners} />
-        </aside>
       </main>
     </div>
   );
