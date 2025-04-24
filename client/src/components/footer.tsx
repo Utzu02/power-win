@@ -33,7 +33,7 @@ export default function Footer() {
                                     </linearGradient>
                                 </defs>
                             </svg>
-                            <span className="text-black font-bold text-lg">POWER WIN</span>
+                            <span className="text-black logofont font-bohme font-bold text-lg">POWER WIN</span>
                         </div>
                         <span>© Copyright PowerWin 2025</span>
                         <span>Registered Company Number: 11320154</span>
