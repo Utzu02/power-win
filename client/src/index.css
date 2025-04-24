@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @tailwind utilities;
+@import "./styles/colors.css";
+
 #root {
   background-color: #252525;
 }
