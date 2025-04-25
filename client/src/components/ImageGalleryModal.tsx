@@ -17,7 +17,7 @@ const ImageGalleryModal: FC<Props> = ({ images, onClose, onSelect }) => {
   return (
     <div
       onClick={handleOverlayClick}
-      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-start justify-center p-4 sm:p-6 overflow-y-auto"
+      className="fixed inset-0 top-0 bg-black/80 backdrop-blur-sm z-50 w-full flex items-start justify-center p-4"
     >
       <div className="relative w-full max-w-7xl mt-8">
         {/* buton în colț */}

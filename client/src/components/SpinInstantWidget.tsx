@@ -51,12 +51,14 @@ export default function SpinInstantWidget({
                   p-[1px] rounded-[10px]
                   bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))]
                   w-fit cursor-pointer transition
-                  ${selectedProduct === p
-                    ? 'bg-[linear-gradient(to_bottom,rgb(18,18,18),rgba(29,28,29))]'
-                    : 'bg-[linear-gradient(to_bottom,rgb(18,18,18),rgba(29,28,29))]'}
                 `}
               >
-                <div className="h-24 w-32 flex items-center justify-center rounded-lg border-none bg-[linear-gradient(to_bottom,rgb(18,18,18),rgba(29,28,29))]">
+                <div className={`h-24 w-32 flex items-center justify-center rounded-lg border-none  
+                  ${selectedProduct === p
+                    ? "bg-gradient-to-b bg-[rgb(19,19,19)]"
+                    : "bg-[rgb(36,36,36)] hover:bg-[rgb(68,68,68)]"}
+                `}
+                >
                   {idx === 0 ? (
                     <img
                       src={iphoneThumb}
@@ -81,17 +83,17 @@ export default function SpinInstantWidget({
               />
             ) : (
               <div className="p-[1px] rounded-lg bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-full h-full">
-              <div className="h-full w-full bg-gradient-to-b from-[#141414] to-[#1b1b1b] rounded-lg flex items-center justify-center bg-gray-800">
-                <span className="text-sm text-gray-300 px-4 text-center">
-                  {selectedProduct ?? 'Niciun produs selectat'}
-                </span>
-              </div></div>
+                <div className="h-full w-full bg-gradient-to-b from-[#141414] to-[#1b1b1b] rounded-lg flex items-center justify-center bg-gray-800">
+                  <span className="text-sm text-gray-300 px-4 text-center">
+                    {selectedProduct ?? 'Niciun produs selectat'}
+                  </span>
+                </div></div>
             )}
           </div>
 
           {/* Col 4: Instant Win */}
           <div className="flex flex-col h-full w-full">
-              <InstantWin />
+            <InstantWin />
           </div>
         </div>
       </div>

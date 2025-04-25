@@ -69,7 +69,7 @@ export default function SpinToWin({ chance }: SpinToWinProps) {
           <div
             className="w-[5%] aspect-square bg-red-800 rounded-full"
             style={{
-              transform: 'translateY(-1150%)',
+              transform: 'translateY(-1100%)',
             }}
           />
         </div>
