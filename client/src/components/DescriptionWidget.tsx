@@ -1,17 +1,37 @@
 import React from 'react';
 
-export default function DescriptionWidget() {
+const DescriptionWidget = () => {
   return (
-    <div className="p-4 border border-gray-700 bg-gradient-to-b from-[#141414] to-[#1b1b1b] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit max-h-[50vh] mt-10 mx-auto overflow-hidden">
-    <div className="p-4 border border-gray-700 rounded-lg bg-gradient-to-b from-[#141414] to-[#1b1b1b]">
-      <h3 className="text-lg font-semibold mb-2">Descriere</h3>
-      <p className="text-sm">Model: Porsche 911 (992) Turbo S | Sonderwunsch | Motor 3.8 | 650 CP</p>
-      <ul className="list-disc list-inside text-xs text-gray-300 mt-2 space-y-1">
-        <li>"Sport" button</li>
-        <li>Adaptiv scaune Sport & pachet Memory</li>
-        {/* ...restul specificațiilor... */}
-      </ul>
-    </div>
+    <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] h-fit mx-auto mt-10">
+      <div className="p-6 w-[45vw] h-[70vh] overflow-y-auto custom-scrollbar bg-gradient-to-b from-[#141414] to-[#1b1b1b] rounded-xl text-white border border-white/20">
+        {/* Titlu */}
+        <h2 className="text-2xl font-light mb-4">Descriere</h2>
+
+        {/* Subtitlu */}
+        <p className="mb-6 text-base font-light">
+          Model: <strong>Porsche 911 (992) Turbo S</strong> | Sonderwunsch | Motor 3.8 | 650 CP
+        </p>
+
+        {/* Lista echipamente – fără bullets, doar liniuță */}
+        <div className="space-y-1 text-sm font-light leading-relaxed">
+          <p>"Sport" buton</p>
+          <p>– Adaptiv scaune Sport incl. reglaj scaun 18-cai si pachet</p>
+          <p>– Memory</p>
+          <p>– Airbag cortina fata (Thoraxbag)</p>
+          <p>– Airbag pe partea pilotului / copilotului</p>
+          <p>– Airbag-uri cortina Porsche Side Impact Protection System</p>
+          <p>– (POSIP)</p>
+          <p>– Blocaj anti-pornire</p>
+          <p>– Carlig haine spatar scaun piele</p>
+          <p>– Caroserie: 2-usi</p>
+          <p>– Connect Plus (Bluetooth, Apple CarPlay, WLAN, VehicleTracking-System – sistem localizare vehicul)</p>
+          <p>– Cuplare automata pentru lumina de drum</p>
+          <p>– Cutie viteze 8 viteze – cutie viteze cu ambreiaj dublu</p>
+          <p>– (PDK)</p>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default DescriptionWidget;

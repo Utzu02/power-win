@@ -6,9 +6,11 @@ html,
 body {
   overflow-x: hidden;
   margin: 0 auto;
+  box-sizing: border-box;
 }
-#root {
-  background-color: #252525;
+
+* {
+  box-sizing: border-box;
 }
 
 /* Scrollbar personalizat inspirat din SVG-ul dat */
@@ -38,8 +40,16 @@ body {
 }
 
 @font-face {
-  font-family: 'gilroy';
+  font-family: 'gilroy-medium';
   src: url('/fonts/gilroy-medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'gilroy-regular';
+  src: url('/fonts/gilroy-regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -54,9 +64,12 @@ body {
 }
 
 body {
-  font-family: 'gilroy', sans-serif;
+  font-family: 'gilroy-regular', sans-serif;
 }
 
+.logomedium {
+  font-family: 'gilroy-medium', sans-serif;
+}
 .logofont {
   font-family: 'bohme', sans-serif;
 }

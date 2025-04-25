@@ -40,7 +40,7 @@ export const CompetitionInfo: FC<Props> = ({
   const percent = (soldTickets / totalTickets) * 100;
 
   return (
-    <section className="space-y-5 w-[45vw]">
+    <section className="space-y-5 w-[45vw] text-white">
       
       {/* title & badge */}
       <div className="flex items-center gap-4">
