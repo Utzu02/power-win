@@ -7,6 +7,9 @@ export default {
       fontFamily: {
         bohme: ['bohme', 'sans-serif'],
       },
+      screens: {
+        '3xl': '1720px',     // de ex. 3xl începe de la 1920px
+      },
     },
   },
   plugins: [scrollbar],

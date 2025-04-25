@@ -57,7 +57,7 @@ export const CompetitionInfo: FC<Props> = ({
       </div>
 
       {alternativeCash && (
-        <span className="text-primary-dim medium text-neutral-300 medium">
+        <span className="text-primary-dim medium text-neutral-300 font-medium">
           Alternativă&nbsp;Cash - ${alternativeCash.toLocaleString()}
         </span>
       )}
@@ -65,13 +65,15 @@ export const CompetitionInfo: FC<Props> = ({
       {/* countdown */}
       <div>
         <p className="mb-2 mt-10 medium">Competiţia se termină în:</p>
-        <div className="flex gap-10 mb-10 text-3xl medium">
+        <div className="flex gap-5 flex-wrap mb-10 text-3xl font-medium">
+          <div className="w-[40vw] 2xl:w-[27vw] 3xl:w-[20vw] gap-10 flex">
           <TimeBox value={left.days} label="Zile" />
           <TimeBox value={left.hours} label="Oră" />
           <TimeBox value={left.minutes} label="Minute" />
           <TimeBox value={left.seconds} label="Secunde" />
+          </div>
           <div className="p-[1px] rounded-md bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit transition duration-200">
-            <button className="flex justify-center align-middle bg-[linear-gradient(to_top,rgb(45,45,45),rgba(100,100,100,0.5))] hover:bg-[rgb(68,68,68)] text-white text-sm regular px-2 py-1.5 rounded-md w-full h-full transition duration-200 cursor-pointer">
+            <button className="flex justify-center align-middle bg-[linear-gradient(to_top,rgb(45,45,45),rgba(100,100,100,0.5))] hover:bg-[rgb(68,68,68)] text-white text-sm font-light px-3 py-1.5 rounded-md w-full h-full transition duration-200 cursor-pointer">
               Extragere Live
             </button>
           </div>
@@ -80,24 +82,24 @@ export const CompetitionInfo: FC<Props> = ({
 
       {/* bullet-uri info */}
       <ul className="space-y-3.5">
-        <li className="flex items-center gap-6">
+        <li className="flex items-center gap-4">
           <svg width="17.5" height="12.5" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M23.8636 0C24.2856 0 24.6902 0.16462 24.9886 0.457646C25.2869 0.750672 25.4545 1.1481 25.4545 1.5625V8.125L33.748 2.42188C33.8672 2.33977 34.0071 2.2914 34.1524 2.28203C34.2978 2.27266 34.4429 2.30266 34.5721 2.36874C34.7012 2.43483 34.8094 2.53447 34.8849 2.6568C34.9604 2.77914 35.0002 2.91947 35 3.0625V21.9375C35.0002 22.0805 34.9604 22.2209 34.8849 22.3432C34.8094 22.4655 34.7012 22.5652 34.5721 22.6313C34.4429 22.6973 34.2978 22.7273 34.1524 22.718C34.0071 22.7086 33.8672 22.6602 33.748 22.5781L25.4545 16.875V23.4375C25.4545 23.8519 25.2869 24.2493 24.9886 24.5424C24.6902 24.8354 24.2856 25 23.8636 25H1.59091C1.16897 25 0.76432 24.8354 0.465966 24.5424C0.167613 24.2493 0 23.8519 0 23.4375V1.5625C0 1.1481 0.167613 0.750672 0.465966 0.457646C0.76432 0.16462 1.16897 0 1.59091 0H23.8636ZM10.1818 7.54531C10.0351 7.54528 9.89291 7.59503 9.77927 7.68615C9.66562 7.77726 9.58752 7.90414 9.55818 8.04531L9.54545 8.16875V16.8281C9.54544 16.9293 9.57046 17.029 9.61835 17.1187C9.66624 17.2083 9.73558 17.2851 9.8204 17.3426C9.90522 17.4001 10.003 17.4365 10.1053 17.4487C10.2076 17.4608 10.3114 17.4484 10.4077 17.4125L10.5239 17.3562L17.4523 13.0266C17.5334 12.9758 17.6017 12.9076 17.6522 12.8272C17.7026 12.7468 17.7338 12.6561 17.7435 12.5621C17.7531 12.4682 17.7409 12.3732 17.7079 12.2845C17.6748 12.1958 17.6217 12.1156 17.5525 12.05L17.4523 11.9719L10.5239 7.64063C10.4212 7.57813 10.3026 7.54405 10.1818 7.54531Z" fill="white"/>
           </svg>
 
           <span className="text-lg medium text-neutral-300">
             Extragera va fi ținută în direct pe{' '}
-            <a href="#" className="underline medium">Facebook</a> și{' '}
-            <a href="#" className="underline medium">YouTube</a>
+            <a href="#" className="underline font-medium">Facebook</a> și{' '}
+            <a href="#" className="underline font-medium">YouTube</a>
           </span>
         </li>
-        <li className="flex items-center gap-6">
+        <li className="flex items-center gap-4">
         <svg width="17.5" height="16.5" viewBox="0 0 35 33" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M26.2536 0C26.6823 5.61183e-05 27.0961 0.15624 27.4164 0.438927C27.7368 0.721614 27.9415 1.11114 27.9917 1.53363L28.0039 1.73684V5.50579C28.7958 5.22893 29.643 5.14452 30.4746 5.25964C31.3061 5.37477 32.0977 5.68606 32.7829 6.16742C33.4682 6.64879 34.0272 7.28618 34.4129 8.02614C34.7987 8.76611 35 9.58708 35 10.4202C35 11.2533 34.7987 12.0743 34.4129 12.8142C34.0272 13.5542 33.4682 14.1916 32.7829 14.6729C32.0977 15.1543 31.3061 15.4656 30.4746 15.5807C29.643 15.6958 28.7958 15.6114 28.0039 15.3346V15.6316C28.0043 18.0946 27.1255 20.4781 25.5234 22.3593C23.9214 24.2406 21.6996 25.498 19.2521 25.9085V29.5263H24.5032C24.9493 29.5268 25.3784 29.6963 25.7028 30.0002C26.0272 30.3041 26.2225 30.7194 26.2486 31.1614C26.2747 31.6033 26.1299 32.0384 25.8435 32.3779C25.5572 32.7174 25.151 32.9356 24.708 32.9878L24.5032 33H10.5004C10.0542 32.9995 9.62514 32.83 9.30073 32.5261C8.97633 32.2222 8.78111 31.8069 8.75497 31.3649C8.72882 30.923 8.87372 30.4879 9.16006 30.1484C9.4464 29.8089 9.85257 29.5908 10.2956 29.5385L10.5004 29.5263H15.7514V25.9085C13.3707 25.5092 11.2012 24.3082 9.60847 22.5075C8.01569 20.7068 7.09685 18.4166 7.00667 16.0224L6.99966 15.6316V15.3346C6.232 15.6042 5.41166 15.693 4.60347 15.5939C3.79527 15.4948 3.02138 15.2106 2.34294 14.7637C1.66451 14.3167 1.10014 13.7193 0.694418 13.0187C0.288701 12.3181 0.0527636 11.5334 0.0052511 10.7267L0 10.4211L0.00875197 10.1154C0.0560886 9.30875 0.291824 8.52411 0.69733 7.82344C1.10284 7.12277 1.667 6.52528 2.34525 6.07818C3.02349 5.63108 3.79723 5.34662 4.60532 5.24728C5.41342 5.14794 6.23372 5.23644 7.00141 5.50579L6.99966 1.73684C6.99966 1.2762 7.18408 0.83443 7.51233 0.508709C7.84059 0.182988 8.2858 0 8.75002 0H26.2536ZM5.24931 8.68421C4.78509 8.68421 4.33988 8.8672 4.01162 9.19292C3.68337 9.51864 3.49896 9.96041 3.49896 10.4211C3.49896 10.8817 3.68337 11.3235 4.01162 11.6492C4.33988 11.9749 4.78509 12.1579 5.24931 12.1579C5.71353 12.1579 6.15874 11.9749 6.487 11.6492C6.81525 11.3235 6.99966 10.8817 6.99966 10.4211C6.99966 9.96041 6.81525 9.51864 6.487 9.19292C6.15874 8.8672 5.71353 8.68421 5.24931 8.68421ZM29.7543 8.68421C29.29 8.68421 28.8448 8.8672 28.5166 9.19292C28.1883 9.51864 28.0039 9.96041 28.0039 10.4211C28.0039 10.8817 28.1883 11.3235 28.5166 11.6492C28.8448 11.9749 29.29 12.1579 29.7543 12.1579C30.2185 12.1579 30.6637 11.9749 30.9919 11.6492C31.3202 11.3235 31.5046 10.8817 31.5046 10.4211C31.5046 9.96041 31.3202 9.51864 30.9919 9.19292C30.6637 8.8672 30.2185 8.68421 29.7543 8.68421Z" fill="white"/>
         </svg>
           <span className="text-lg medium text-neutral-300">Această competiție are { winners } { winners === 1 ? 'câștigător' : 'câștigători' }</span>
         </li>
-        <li className="flex items-center gap-6">
+        <li className="flex items-center gap-4">
         <svg width="17.5" height="14" viewBox="0 0 35 28" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0162 26.2553L21.0267 22.75C21.0267 22.2847 21.2115 21.8385 21.5405 21.5095C21.8695 21.1805 22.3157 20.9956 22.781 20.9956C23.2463 20.9956 23.6925 21.1805 24.0216 21.5095C24.3506 21.8385 24.5354 22.2847 24.5354 22.75V26.2097C24.5354 27.0515 24.5354 27.4732 24.8049 27.7323C25.0762 27.9895 25.4874 27.972 26.3152 27.937C29.5754 27.7988 31.5792 27.3595 32.9897 25.949C34.4072 24.5385 34.8464 22.5347 34.9847 19.2692C35.0109 18.6217 35.0249 18.2962 34.9042 18.081C34.7817 17.8657 34.3004 17.5963 33.3344 17.0555C32.7903 16.7521 32.337 16.309 32.0215 15.7718C31.7059 15.2347 31.5396 14.623 31.5396 14C31.5396 13.377 31.7059 12.7653 32.0215 12.2282C32.337 11.691 32.7903 11.2479 33.3344 10.9445C34.3004 10.4055 34.7834 10.1343 34.9042 9.919C35.0249 9.70375 35.0109 9.38 34.9829 8.73075C34.8464 5.46525 34.4054 3.46325 32.9897 2.051C31.4549 0.518 29.2184 0.13125 25.4262 0.0332501C25.31 0.0302118 25.1945 0.0504634 25.0863 0.09281C24.9782 0.135157 24.8796 0.19874 24.7964 0.279809C24.7132 0.360877 24.6471 0.457787 24.602 0.564821C24.5568 0.671855 24.5336 0.786843 24.5337 0.903V5.25C24.5337 5.71529 24.3488 6.16152 24.0198 6.49053C23.6908 6.81954 23.2446 7.00437 22.7793 7.00437C22.314 7.00437 21.8678 6.81954 21.5387 6.49053C21.2097 6.16152 21.0249 5.71529 21.0249 5.25L21.0127 0.87325C21.0122 0.641489 20.9198 0.419379 20.7558 0.255663C20.5917 0.0919465 20.3694 -4.63522e-07 20.1377 0H13.9917C7.37665 0 4.06915 -2.08616e-07 2.0129 2.051C0.595403 3.4615 0.156154 5.46525 0.0179037 8.73075C-0.00834634 9.37825 -0.0223463 9.70375 0.0984037 9.919C0.220904 10.1343 0.702153 10.4055 1.66815 10.9445C2.21229 11.2479 2.66554 11.691 2.98108 12.2282C3.29661 12.7653 3.46297 13.377 3.46297 14C3.46297 14.623 3.29661 15.2347 2.98108 15.7718C2.66554 16.309 2.21229 16.7521 1.66815 17.0555C0.702153 17.5963 0.219154 17.8657 0.0984037 18.081C-0.0223463 18.2962 -0.00834646 18.62 0.0196535 19.2675C0.156154 22.5347 0.597153 24.5385 2.0129 25.949C4.06915 28 7.37665 28 13.9934 28H19.2609C20.0869 28 20.4982 28 20.7554 27.7445C21.0127 27.489 21.0144 27.0795 21.0162 26.2553ZM24.5337 15.75V12.25C24.5337 11.7847 24.3488 11.3385 24.0198 11.0095C23.6908 10.6805 23.2446 10.4956 22.7793 10.4956C22.314 10.4956 21.8678 10.6805 21.5387 11.0095C21.2097 11.3385 21.0249 11.7847 21.0249 12.25V15.75C21.0249 16.2155 21.2098 16.662 21.539 16.9911C21.8682 17.3203 22.3146 17.5053 22.7802 17.5053C23.2457 17.5053 23.6921 17.3203 24.0213 16.9911C24.3505 16.662 24.5337 16.2155 24.5337 15.75Z" fill="white"/>
         </svg>
@@ -107,7 +109,7 @@ export const CompetitionInfo: FC<Props> = ({
       {/* Action Buttons - styled and spaced */}
       <div className="flex gap-4 mt-10 mb-2">
         <div className="p-[1px] mb-6 rounded-md bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit transition duration-200">
-          <button className="flex bg-[linear-gradient(to_top,rgb(45,45,45),rgba(100,100,100,0.5))] hover:bg-[rgb(68,68,68)] text-white text-sm medium px-4 py-1.5 rounded-md w-full h-full transition duration-200 cursor-pointer">
+          <button className="flex bg-[linear-gradient(to_top,rgb(45,45,45),rgba(100,100,100,0.5))] hover:bg-[rgb(68,68,68)] text-white text-sm font-light px-4 py-1.5 rounded-md w-full h-full transition duration-200 cursor-pointer">
             <span className="text-base medium">Intrare Poștală Gratis</span>
             <svg width="12" height="23" viewBox="0 0 24 23" className="ml-2.5" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1.5 22L22.5 1M22.5 1L22.5 16.75M22.5 1L6.75 0.999999" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
@@ -115,8 +117,8 @@ export const CompetitionInfo: FC<Props> = ({
           </button>
         </div>
         <div className="p-[1px] mb-6 rounded-md bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit transition duration-200">
-          <button className="flex bg-[linear-gradient(to_top,rgb(45,45,45),rgba(100,100,100,0.5))] hover:bg-[rgb(68,68,68)] text-white text-sm medium px-4 py-1.5 rounded-md w-full h-full transition duration-200 cursor-pointer">
-          <span className="text-base medium">Reguli Giveaway</span>
+          <button className="flex bg-[linear-gradient(to_top,rgb(45,45,45),rgba(100,100,100,0.5))] hover:bg-[rgb(68,68,68)] text-white text-sm font-light px-4 py-1.5 rounded-md w-full h-full transition duration-200 cursor-pointer">
+          <span className="medium">Reguli Giveaway</span>
             <svg width="12" height="23" viewBox="0 0 24 23" className="ml-2.5" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1.5 22L22.5 1M22.5 1L22.5 16.75M22.5 1L6.75 0.999999" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
@@ -138,7 +140,7 @@ export const CompetitionInfo: FC<Props> = ({
 
           {/* progresul */}
           <div
-            className="absolute top-0 left-0 rounded-full h-full z-10 bg-gradient-to-r from-gray-400 to-red-800 border border-gray-200"
+            className="absolute top-0 left-0 rounded-full  h-full z-10 bg-gradient-to-r from-gray-400 to-red-800 border border-gray-200"
             style={{ width: `${percent}%` }}
           />
 
@@ -147,7 +149,7 @@ export const CompetitionInfo: FC<Props> = ({
             className="absolute mt-[-90px] flex-row justify-center align-middle top-0 transform z-20"
             style={{ left: `calc(${percent}% - 5.5px)` }}
           >
-              <div className="text-2xl ultralight ml-[-35px] z-20 tracking-tight">
+              <div className="text-2xl font-small ml-[-35px] z-20 tracking-tight">
                 {percent.toFixed(2).replace('.', ',')}%
               </div>
               <svg width="3" height="45" viewBox="0 0 4 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -164,7 +166,7 @@ export const CompetitionInfo: FC<Props> = ({
         </div>
 
         {/* contor centrat jos */}
-        <div className="text-center mt-3 text-lg regular">
+        <div className="text-center mt-3 text-lg font-small">
           {soldTickets.toLocaleString()}/{totalTickets.toLocaleString()}
         </div>
       </div>
