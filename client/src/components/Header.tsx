@@ -66,7 +66,7 @@ export const Header = () => (
               <span className="inline-flex items-center gap-2">
               {label}
               {label === "Competitions" && (
-                <img src={downArrow} alt="" className="w-3 h-3" />
+                <img src={downArrow} alt="" className="w-auto h-2" />
               )}
               </span>
           </NavLink>
