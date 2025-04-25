@@ -6,9 +6,11 @@ html,
 body {
   overflow-x: hidden;
   margin: 0 auto;
+  box-sizing: border-box;
 }
-#root {
-  background-color: #252525;
+
+* {
+  box-sizing: border-box;
 }
 
 /* Scrollbar personalizat inspirat din SVG-ul dat */

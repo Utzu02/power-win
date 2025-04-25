@@ -25,8 +25,8 @@ const mockCompetition: Competition = {
     answers: ["Audi", "Porsche", "BMW"],
     correctIndex: 1,
   },
-  totalTickets: getRandomNumber(50000,100000),
-  soldTickets: getRandomNumber(10000,50000),
+  totalTickets: getRandomNumber(50000, 100000),
+  soldTickets: getRandomNumber(10000, 50000),
   endsAt: new Date(Date.now() + 19 * 24 * 60 * 60 * 1000).toISOString(),
 
   // 🔽 PATHURI RELATIVE către public/assets/images
@@ -50,7 +50,7 @@ export default function LandingPage() {
     alert(`Ai cumpărat ${qty} bilete! Succes!`);
 
   return (
-    <div className="min-h-screen grid grid-rows-[auto_1fr] text-white">
+    <div className="">
       <Header />
 
       <main className="flex max-w-[100vw]">
@@ -73,20 +73,23 @@ export default function LandingPage() {
             </div>
           </div>
 
-          
-        </section>
 
-       
+        </section>
       </main>
 
-      <section className="">
-          <RafflePage />
+      <section className="flex justify-center align-middle">
+        <RafflePage />
       </section>
-      
-      <div className="flex flex-wrap mb-[15vh]">
-        <PowerWin />
-        <SpinWinModal />
+
+      <div className="flex mx-12 flex-wrap mb-[15vh]">
+        <div className="flex-1 flex justify-baseline">
+          <PowerWin />
+        </div>
+        <div className="flex-1 flex justify-end">
+          <SpinWinModal />
+        </div>
       </div>
+
 
 
       <Footer />

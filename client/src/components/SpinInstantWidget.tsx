@@ -32,7 +32,7 @@ export default function SpinInstantWidget({
   }, [tickets]);
 
   return (
-    <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-full h-auto mt-10 overflow-hidden">
+    <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-[93vw] h-auto mt-10 overflow-hidden">
     <div
       className="
         p-4 border border-gray-700 rounded-lg

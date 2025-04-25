@@ -20,7 +20,7 @@ const winners: Winner[] = Array.from({ length: 30 }, (_, i) => ({
 
 const SpinWinModal: React.FC = () => {
     return (
-        <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit max-h-[50vh] mt-10 mx-auto overflow-hidden">
+        <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit mt-10 overflow-hidden">
             <div className="relative bg-gradient-to-b from-[#141414] to-[#1b1b1b] text-white px-4 sm:px-6 pt-6 pb-3 rounded-[10px] w-[90vw] sm:w-[80vw] md:w-[60vw] lg:w-[40vw] max-h-[50vh] overflow-hidden">
                 <h2 className="text-lg sm:text-xl font-semibold mb-6">Câștigători Instant Spin Win</h2>
 
