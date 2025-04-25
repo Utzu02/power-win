@@ -12,7 +12,7 @@ const getRandomNumber = (min: number, max: number): number =>
     Math.floor(Math.random() * (max - min + 1)) + min;
 
 // Generăm 20 de câștigători cu date random
-const winners: Winner[] = Array.from({ length: 30 }, (_, i) => ({
+const winners: Winner[] = Array.from({ length: 30 }, (_, __) => ({
     name: "Petru Mihaescu[Guest]",
     tickets: `${getRandomNumber(1, 10)}`,      // bilete între 1 și 10
     order: `#${getRandomNumber(1000, 9999)}`,  // comandă între #1000 și #9999

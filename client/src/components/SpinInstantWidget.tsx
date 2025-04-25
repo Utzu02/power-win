@@ -1,10 +1,11 @@
 // src/components/SpinInstantWidget.tsx
 
 import React, { useEffect, useState } from 'react';
-import SpinToWin from './spinToWin';
+import SpinToWin from './SpinToWin';
 import InstantWin from './instantWin';
 import iphoneThumb from '../assets/iphone16.png';
 import iphoneCard from '../assets/iphone16selected.png';
+import ProductPreviewCard from './ProductPreviewCard';
 
 const products = [
   'iPhone 16',
@@ -75,20 +76,7 @@ export default function SpinInstantWidget({
 
           {/* Col 3: Selected Product Preview */}
           <div className="flex flex-col h-full w-full">
-            {selectedProduct === products[0] ? (
-              <img
-                src={iphoneCard}
-                alt="iPhone 16 Pro Max"
-                className="w-full h-full object-contain rounded-lg"
-              />
-            ) : (
-              <div className="p-[1px] rounded-lg bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-full h-full">
-                <div className="h-full w-full bg-gradient-to-b from-[#141414] to-[#1b1b1b] rounded-lg flex items-center justify-center bg-gray-800">
-                  <span className="text-sm text-gray-300 px-4 text-center">
-                    {selectedProduct ?? 'Niciun produs selectat'}
-                  </span>
-                </div></div>
-            )}
+            <ProductPreviewCard product={selectedProduct} attachment={iphoneThumb} />
           </div>
 
           {/* Col 4: Instant Win */}
