@@ -8,7 +8,7 @@ export default function SpinToWin({ chance }: SpinToWinProps) {
   const percentage = Math.max(0, Math.min(100, chance));
   const [angle, setAngle] = useState(0);
   const [spinning, setSpinning] = useState(false);
-  const [result, setResult] = useState<string | null>(null);
+  const [result, setResult] = useState<string | null>('null');
   const [transition, setTransition] = useState('transform 2s ease-in');
 
   const spin = () => {
@@ -30,7 +30,7 @@ export default function SpinToWin({ chance }: SpinToWinProps) {
 
     setTimeout(() => {
       const win = Math.random() * 100 < chance;
-      setResult(win ? '🎉 Ai câștigat!' : 'N-ai avut noroc.');
+      setResult(win ? '🎉 Ai câștigat!' : 'Nu ai avut noroc.');
       setSpinning(false);
     }, 3000);
   };
@@ -117,11 +117,11 @@ export default function SpinToWin({ chance }: SpinToWinProps) {
           <p className="ml-3">{spinning ? 'Se învârte...' : 'Demo Spin'}</p>
         </button>
       </div>
-      {result && (
-        <p className="mt-4 text-center text-lg font-semibold">
-          {result}
-        </p>
-      )}
+     
+      <p className="mt-4 text-center text-lg font-semibold" style={{ opacity: result === 'null' ? 0 : 1 }}>
+        {result}
+      </p>
+      
     </div>
   );
 }

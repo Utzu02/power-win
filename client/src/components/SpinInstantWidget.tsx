@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import SpinToWin from './SpinToWin';
 import InstantWin from './instantWin';
 import iphoneThumb from '../assets/iphone16.png';
-import iphoneCard from '../assets/iphone16selected.png';
 import ProductPreviewCard from './ProductPreviewCard';
 
 const products = [
