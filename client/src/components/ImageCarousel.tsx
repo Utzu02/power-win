@@ -14,26 +14,30 @@ export const ImageCarousel: FC<Props> = ({ images }) => {
   useEffect(() => {
     const html = document.documentElement;
     const body = document.body;
-
+  
     if (showModal) {
       html.classList.add("overflow-hidden");
       body.classList.add("overflow-hidden");
+  
+      // Scroll to top instant
+      window.scrollTo({ top: 0, behavior: "auto" });
     } else {
       html.classList.remove("overflow-hidden");
       body.classList.remove("overflow-hidden");
     }
-
+  
     return () => {
       html.classList.remove("overflow-hidden");
       body.classList.remove("overflow-hidden");
     };
   }, [showModal]);
+  
 
 
   const thumbnails = showAll ? images : images.slice(0, 3);
 
   return (
-    <div className="mt-[8vh] relative">
+    <div className="mt-[8vh]">
       {/* Galerie thumbnails */}
       <div className="flex justify-center items-center gap-3">
         {thumbnails.map((url, i) => (

@@ -50,9 +50,9 @@ export default function LandingPage() {
     alert(`Ai cumpărat ${qty} bilete! Succes!`);
 
   return (
-    <div className="">
+    <div className="relative">
       <Header />
-      <div className="relative left-[50%] translate-x-[-50%] w-[92vw]">
+      <div className="mx-auto w-[92vw]">
         <main className="flex">
           <section className="space-y-8 w-full">
             <div className="flex flex-col md:flex-row items-start">
