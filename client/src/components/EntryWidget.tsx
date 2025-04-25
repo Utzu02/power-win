@@ -18,7 +18,7 @@ export default function EntryWidget({
   
   return (
     <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit m-0 mx-auto self-start">
-      <div className="p-6 bg-gradient-to-b from-[#212121] to-[#242424] rounded-xl w-[45vw] mx-auto">
+      <div className="p-6 bg-gradient-to-b from-[#141414] to-[#1b1b1b] rounded-xl w-[45vw] mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-light">Ce brand este această mașină?</h2>

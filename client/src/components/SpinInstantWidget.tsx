@@ -1,7 +1,7 @@
 // src/components/SpinInstantWidget.tsx
 
 import React, { useEffect, useState } from 'react';
-import SpinToWin from './SpinToWin';
+import SpinToWin from './spinToWin';
 import InstantWin from './instantWin';
 import iphoneThumb from '../assets/iphone16.png';
 import iphoneCard from '../assets/iphone16selected.png';
@@ -37,12 +37,12 @@ export default function SpinInstantWidget({
         <div className="grid grid-cols-[1.9fr_0.7fr_1.3fr_2fr] items-stretch h-full">
           {/* Col 1: Spin to Win */}
           <div className="flex flex-col ml-4 w-[80%] justify-center items-center">
-            <h4 className="text-lg text-left w-full font-semibold mb-8">Spin to Win</h4>
+            <h4 className="mt-10 text-lg text-left w-full font-semibold mb-4">Spin to Win</h4>
             <SpinToWin chance={chance} />
           </div>
 
           {/* Col 2: Product Thumbnails */}
-          <div className="flex flex-col justify-center gap-10 py-4 items-center h-full">
+          <div className="flex flex-col justify-center gap-10 items-center h-full">
             {products.map((p, idx) => (
               <div
                 key={p}

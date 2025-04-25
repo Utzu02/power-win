@@ -16,8 +16,8 @@ export default function SpinToWin({ chance }: SpinToWinProps) {
     setSpinning(true);
     setResult(null);
 
-    const fastPart = 1080; // 3 ture
-    const slowPart = 180 + Math.floor(Math.random() * 90); // încetinire finală
+    const fastPart = 1080;
+    const slowPart = 180 + Math.floor(Math.random() * 90);
 
     setTransition('transform 2s ease-in');
     const firstAngle = angle - fastPart;
@@ -36,8 +36,8 @@ export default function SpinToWin({ chance }: SpinToWinProps) {
   };
 
   return (
-    <div className="p-4 rounded flex flex-col text-center relative left-[50%] translate-x-[-50%] w-full ">
-      <div className="relative aspect-square h-full w-full left-[50%] translate-x-[-50%]">
+    <div className="p-6 ml-4 rounded flex flex-col text-center relative left-[50%] translate-x-[-50%] w-full">
+      <div className="relative aspect-square w-full left-[50%] translate-x-[-50%]">
         <svg viewBox="0 0 36 36" className="w-full h-full">
           <path
             d="M18 2.0845
@@ -58,17 +58,21 @@ export default function SpinToWin({ chance }: SpinToWinProps) {
           />
         </svg>
 
-        {/* Punct rotativ */}
+        {/* Punct rotativ responsive */}
         <div
-          className="absolute w-4 h-4 bg-red-800 rounded-full"
+          className="absolute inset-0 flex items-center justify-center"
           style={{
-            top: '70px',
-            left: '50%',
-            transform: `rotate(${angle}deg) translateX(-50%) translateY(-90px)`,
-            transformOrigin: 'center 90px',
-            transition: transition
+            transform: `rotate(${angle}deg)`,
+            transition: transition,
           }}
-        />
+        >
+          <div
+            className="w-[5%] aspect-square bg-red-800 rounded-full"
+            style={{
+              transform: 'translateY(-1150%)',
+            }}
+          />
+        </div>
 
         {/* Text procent */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-xl font-semibold">
@@ -76,11 +80,11 @@ export default function SpinToWin({ chance }: SpinToWinProps) {
           <p className="text-[16px] text-gray-400">Șansă de câștig</p>
         </div>
       </div>
-
+      <div className="p-[1px] mx-auto mt-10 rounded-lg bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] h-fit w-fit transition duration-200">
       <button
         onClick={spin}
         disabled={spinning}
-        className="bg-[rgb(58,58,58)] mt-10 flex justify-center items-center hover:bg-[rgb(68,68,68)] text-white text-sm font-light px-8 py-2 rounded-md transition duration-200 cursor-pointer"
+        className="bg-[rgb(58,58,58)] flex justify-center items-center hover:bg-[rgb(68,68,68)] text-white relative left-[50%] translate-x-[-50%] text-sm font-light w-fit px-8 py-2 rounded-md transition duration-200 cursor-pointer"
       >
         <svg width="22" height="20" viewBox="0 0 37 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M25.32 2.77048C25.8275 3.11177 26.1768 3.63812 26.2912 4.23374C26.4057 4.82935 26.2757 5.44544 25.93 5.94648C25.5844 6.44751 25.0512 6.79244 24.448 6.90539C23.8447 7.01834 23.2207 6.89006 22.7132 6.54876C20.5759 5.11422 18.0138 4.42714 15.435 4.59698C12.8563 4.76682 10.4093 5.78381 8.48392 7.48594C6.55851 9.18807 5.26543 11.4774 4.81068 13.9893C4.35592 16.5011 4.76566 19.091 5.97462 21.3462C7.18357 23.6015 9.1222 25.3925 11.4816 26.4338C13.8411 27.4751 16.4856 27.7069 18.994 27.0922C21.5023 26.4775 23.7302 25.0517 25.3226 23.042C26.915 21.0322 27.7804 18.5541 27.781 16.0025C27.781 15.3963 28.0249 14.8149 28.459 14.3862C28.8932 13.9576 29.482 13.7168 30.096 13.7168C30.71 13.7168 31.2989 13.9576 31.7331 14.3862C32.1672 14.8149 32.4111 15.3963 32.4111 16.0025C32.4106 19.575 31.199 23.0446 28.9695 25.8584C26.74 28.6723 23.6208 30.6685 20.1088 31.5289C16.5969 32.3894 12.8943 32.0647 9.59098 30.6065C6.28766 29.1484 3.57365 26.6406 1.88138 23.4828C0.189112 20.3251 -0.38406 16.699 0.253186 13.1822C0.890433 9.66553 2.70144 6.46056 5.39765 4.07795C8.09387 1.69535 11.5202 0.272197 15.1307 0.0352452C18.7412 -0.201706 22.3281 0.761176 25.32 2.77048Z" fill="white" />
@@ -90,7 +94,7 @@ export default function SpinToWin({ chance }: SpinToWinProps) {
 
         <p className="ml-3">{spinning ? 'Se învârte...' : 'Demo Spin'}</p>
       </button>
-
+</div>
       {result && (
         <p className="mt-4 text-center text-lg font-semibold">
           {result}

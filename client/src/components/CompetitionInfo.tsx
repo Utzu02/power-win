@@ -124,7 +124,7 @@ export const CompetitionInfo: FC<Props> = ({
         </div>
       </div>
       {/* progress bar section */}
-      <div className="space-y-2.5 mt-20">
+      <div className="space-y-2.5 mt-22">
         {/* bara de progres */}
         <div className="relative w-full h-5 bg-gradient-to-r from-gray-40">
           {/* efectul cu linii */}

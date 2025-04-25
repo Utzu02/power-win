@@ -17,7 +17,7 @@ export default function RafflePage() {
   }, [tickets]);
 
   return (
-    <div className="mx-4 relative min-h-screen text-white space-y-6">
+    <div className="mt-10 relative min-h-screen text-white space-y-6">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 items-start">
         <div ref={entryRef}>
           <EntryWidget

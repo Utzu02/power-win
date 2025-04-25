@@ -7,15 +7,15 @@ interface DescriptionWidgetProps {
 const DescriptionWidget = ({ syncedHeight }: DescriptionWidgetProps) => {
   return (
     <div
-      className="p-[1px] rounded-[10px] mx-auto self-start"
+      className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit m-0 mx-auto self-start"
       style={{ height: syncedHeight || 'auto' }}
     >
-      <div className="p-6 w-[45vw] h-full overflow-y-auto custom-scrollbar bg-gradient-to-b from-[#212121] to-[#242424] rounded-xl text-white border border-white/20">
-        <h2 className="text-3xl font-light mb-4">Descriere</h2>
-        <p className="mb-6 font-light text-2xl">
+      <div className="p-6 w-[45vw] h-full overflow-y-auto custom-scrollbar bg-gradient-to-b from-[#141414] to-[#1b1b1b] rounded-xl text-white border border-white/20">
+        <h2 className="text-2xl font-light mb-4">Descriere</h2>
+        <p className="mb-6 font-light text-xl">
           Model: <strong>Porsche 911 (992) Turbo S</strong> | Sonderwunsch | Motor 3.8 | 650 CP
         </p>
-        <div className="space-y-1 font-light leading-relaxed text-xl">
+        <div className="space-y-1 font-light leading-relaxed text-md">
           <p>"Sport" buton</p>
           <p>– Adaptiv scaune Sport incl. reglaj scaun 18-cai si pachet</p>
           <p>– Memory</p>
