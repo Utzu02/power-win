@@ -49,7 +49,8 @@ export default function SpinToWin({ chance }: SpinToWinProps) {
           />
           <path
             d="M18 2.0845
-               a 15.9155 15.9155 0 0 1 0 31.831"
+               a 15.9155 15.9155 0 0 1 0 31.831
+               a 15.9155 15.9155 0 0 1 0 -31.831"
             fill="none"
             stroke="#9f0712"
             strokeWidth="2.2"
@@ -97,7 +98,7 @@ export default function SpinToWin({ chance }: SpinToWinProps) {
 
         {/* Text procent */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-xl font-semibold">
-          <p className="text-2xl">{percentage}%</p>
+          <p className="text-2xl">{percentage.toFixed(1)}%</p>
           <p className="text-[16px] text-gray-400">Șansă de câștig</p>
         </div>
       </div>

@@ -8,7 +8,10 @@ interface EntryWidgetProps {
 
 const brands = ["Audi", "Porsche", "BMW"];
 const correctAnswer = 'Porsche';
-const MAX_TICKETS = 500;
+const MAX_TICKETS_AVAILABLE = 500;
+const MAX_TICKETS = 500 * 100 / 70;
+
+const PRICE = 2.5;
 
 export default function EntryWidget({
   tickets,
@@ -64,7 +67,7 @@ export default function EntryWidget({
           </button>
 
           {/* Number input */}
-          <div className="p-[1px] rounded-lg bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] h-full w-fit transition duration-200">
+          <div className="p-[1px] rounded-lg bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] h-full w-fit">
             <input
               type="number"
               min={1}
@@ -82,7 +85,7 @@ export default function EntryWidget({
 
           {/* Plus */}
           <button
-            onClick={() => onTicketsChange(Math.min(MAX_TICKETS, tickets + 1))}
+            onClick={() => onTicketsChange(Math.min(MAX_TICKETS_AVAILABLE, tickets + 1))}
             className="w-12 h-12 flex items-center justify-center rounded-md text-2xl border border-gray-600 shadow-md bg-gradient-to-b from-black via-[#121212] to-[#161616] hover:via-[#1a1a1a] transition-all cursor-pointer"
           >
             +
@@ -112,15 +115,15 @@ export default function EntryWidget({
 
               {/* Bara colorată (valoare) */}
               <div
-                className="absolute top-0 left-0 h-full rounded-md z-10 bg-gradient-to-r border border-gray-200 from-neutral-500 to-red-800 transition-all duration-300"
-                style={{ width: `${(tickets / MAX_TICKETS) * 100}%` }}
+                className="absolute top-0 left-0 h-full rounded-md z-10 bg-gradient-to-r border border-gray-200 from-neutral-500 to-red-800"
+                style={{ width: `${(tickets / MAX_TICKETS_AVAILABLE) * 100}%` }}
               />
 
               {/* Thumb (bulina albă) */}
               <div
-                className="absolute w-4 h-12 rounded-full bg-white z-20 transition-all duration-300"
+                className="absolute w-4 h-12 rounded-full bg-white z-20"
                 style={{
-                  left: `calc(${(tickets / MAX_TICKETS) * 100}% - 8px)`,
+                  left: `calc(${(tickets / MAX_TICKETS_AVAILABLE) * 100}% - 8px)`,
                   top: "50%",
                   transform: "translateY(-50%)",
                 }}
@@ -130,18 +133,19 @@ export default function EntryWidget({
               <input
                 type="range"
                 min={1}
-                max={MAX_TICKETS}
+                max={MAX_TICKETS_AVAILABLE}
                 value={tickets}
                 onChange={(e) => onTicketsChange(Number(e.target.value))}
+            
                 className="absolute top-0 left-0 w-full h-4 opacity-0 z-30 cursor-pointer"
               />
             </div>
 
             {/* Indicator deasupra bulinei */}
             <div
-              className="absolute -top-10 text-xs text-white bg-[linear-gradient(to_bottom,rgb(100,100,100),rgb(69,68,69))] px-2 py-1 rounded-sm z-30 transition duration-300"
+              className="absolute -top-10 text-xs text-white bg-[linear-gradient(to_bottom,rgb(100,100,100),rgb(69,68,69))] px-2 py-1 rounded-sm z-30 transition"
               style={{
-                left: `calc(${(tickets / MAX_TICKETS) * 100}%`,
+                left: `calc(${(tickets / MAX_TICKETS_AVAILABLE) * 100}%`,
                 transform: "translateX(-50%)",
               }}
             >
@@ -161,7 +165,7 @@ export default function EntryWidget({
         {/* Participă acum button */}
         <div className="flex align-middle justify-center">
           <button className="mt-6 w-[84%] flex align-middle justify-center cursor-pointer  bg-[linear-gradient(to_bottom,rgb(200,0,0,1),rgba(54,54,54,0.1))] hover:brightness-120 text-lg font-medium py-2 rounded-xl transition">
-            Participă acum – £{(tickets * 2.5).toFixed(2)}
+            Participă acum – £{(tickets * PRICE).toFixed(2)}
           </button>
         </div>
       </div>
