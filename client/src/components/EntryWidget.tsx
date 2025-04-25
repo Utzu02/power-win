@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
-import './../index.css';
+import React, { useState } from "react";
+import "./../index.css";
 
 interface EntryWidgetProps {
   tickets: number;
   onTicketsChange: (n: number) => void;
 }
 
-const brands = ['Audi', 'Porsche', 'BMW'];
+const brands = ["Audi", "Porsche", "BMW"];
 const MAX_TICKETS = 500;
 
-export default function EntryWidget({ tickets, onTicketsChange }: EntryWidgetProps) {
+export default function EntryWidget({
+  tickets,
+  onTicketsChange,
+}: EntryWidgetProps) {
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
 
   return (
     <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit mt-10 mx-auto">
-      <div className="p-6 bg-gradient-to-b from-[#141414] to-[#1b1b1b] rounded-xl h-full w-[45vw] mx-auto">
+      <div className="p-6 bg-gradient-to-b from-[#212121] to-[#242424] rounded-xl h-full w-[45vw] mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-light">Ce brand este această mașină?</h2>
@@ -28,7 +31,6 @@ export default function EntryWidget({ tickets, onTicketsChange }: EntryWidgetPro
         {/* Brand buttons */}
         <div className="flex space-x-4 mb-8">
           {brands.map((b) => (
-
             <div
               key={b}
               className="p-[1px] flex-1 mb-6 rounded-md bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] h-full w-fit transition duration-200"
@@ -37,15 +39,16 @@ export default function EntryWidget({ tickets, onTicketsChange }: EntryWidgetPro
                 onClick={() => setSelectedBrand(b)}
                 className={`
     w-full h-full text-lg font-light px-5 py-5 rounded-md transition duration-200 cursor-pointer
-    ${selectedBrand === b
-                    ? "bg-gradient-to-b from-[#141414] to-[#1b1b1b] text-white"
-                    : "bg-[rgb(58,58,58)] hover:bg-[rgb(68,68,68)] text-white"}
+    ${
+      selectedBrand === b
+        ? "bg-gradient-to-b from-[#141414] to-[#1b1b1b] text-white"
+        : "bg-[rgb(58,58,58)] hover:bg-[rgb(68,68,68)] text-white"
+    }
   `}
               >
                 {b}
               </button>
             </div>
-
           ))}
         </div>
 
@@ -67,7 +70,9 @@ export default function EntryWidget({ tickets, onTicketsChange }: EntryWidgetPro
               max={500}
               value={tickets}
               onChange={(e) =>
-                onTicketsChange(Math.min(500, Math.max(1, Number(e.target.value))))
+                onTicketsChange(
+                  Math.min(500, Math.max(1, Number(e.target.value)))
+                )
               }
               placeholder="Introdu numărul de bilete"
               className="w-48 h-12 bg-[#3A3A3A] rounded-lg text-center placeholder-gray-400 focus:outline-none appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
@@ -82,75 +87,79 @@ export default function EntryWidget({ tickets, onTicketsChange }: EntryWidgetPro
             +
           </button>
         </div>
-
-        {/* Slider with bubble */}
-        <div className="relative flex items-center space-x-4 w-full mt-16">
+        <div className="flex flex-wrap w-full items-center justify-center">
           {/* Minus */}
-          <button onClick={() => onTicketsChange(Math.max(1, tickets - 1))} className="py-1 px-3 flex items-center justify-center rounded-full border border-gray-600 shadow-md bg-gradient-to-b from-black via-[#121212] to-[#161616] hover:via-[#1a1a1a] transition-all cursor-pointer">
-            −</button>
+          <button
+            onClick={() => onTicketsChange(Math.max(1, tickets - 1))}
+            className="py-1 px-3 flex items-center justify-center rounded-full border border-gray-600 shadow-md bg-gradient-to-b from-black via-[#121212] to-[#161616] hover:via-[#1a1a1a] transition-all cursor-pointer"
+          >
+            −
+          </button>
 
-          {/* Container slider */}
-          <div className="relative w-full h-7 overflow-visible">
-            {/* Linii verticale (tick marks) */}
+          {/* Slider with bubble */}
+          <div className="relative flex items-center space-x-4 flex-1">
+            {/* Container slider */}
+            <div className="relative w-full h-7 overflow-visible">
+              {/* Linii verticale (tick marks) */}
+              <div
+                className="absolute inset-0 z-0 pointer-events-none"
+                style={{
+                  backgroundImage:
+                    "repeating-linear-gradient(to right, transparent, transparent 4px, rgba(255,255,255,0.5) 4px, rgba(255,255,255,0.7) 5px)",
+                }}
+              />
+
+              {/* Bara colorată (valoare) */}
+              <div
+                className="absolute top-0 left-0 h-full rounded-md z-10 bg-gradient-to-r border border-gray-200 from-gray-400 to-red-800 transition-all duration-300"
+                style={{ width: `${(tickets / MAX_TICKETS) * 100}%` }}
+              />
+
+              {/* Thumb (bulina albă) */}
+              <div
+                className="absolute w-4 h-12 rounded-full bg-white z-20 transition-all duration-300"
+                style={{
+                  left: `calc(${(tickets / MAX_TICKETS) * 100}% - 8px)`,
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                }}
+              />
+
+              {/* Input slider invizibil dar funcțional */}
+              <input
+                type="range"
+                min={1}
+                max={MAX_TICKETS}
+                value={tickets}
+                onChange={(e) => onTicketsChange(Number(e.target.value))}
+                className="absolute top-0 left-0 w-full h-4 opacity-0 z-30 cursor-pointer"
+              />
+            </div>
+
+            {/* Indicator deasupra bulinei */}
             <div
-              className="absolute inset-0 z-0 pointer-events-none"
+              className="absolute -top-8 text-xs text-white bg-slate-800 px-2 py-1 rounded z-30 transition duration-300"
               style={{
-                backgroundImage:
-                  'repeating-linear-gradient(to right, transparent, transparent 4px, rgba(255,255,255,0.5) 4px, rgba(255,255,255,0.7) 5px)',
+                left: `calc(${(tickets / MAX_TICKETS) * 100}%`,
+                transform: "translateX(-50%)",
               }}
-            />
-
-            {/* Bara colorată (valoare) */}
-            <div
-              className="absolute top-0 left-0 h-full rounded-md z-10 bg-gradient-to-r border border-gray-200 from-gray-400 to-red-800 transition-all duration-300"
-              style={{ width: `${(tickets / MAX_TICKETS) * 100}%` }}
-            />
-
-            {/* Thumb (bulina albă) */}
-            <div
-              className="absolute w-4 h-12 rounded-full bg-white z-20 transition-all duration-300"
-              style={{
-                left: `calc(${(tickets / MAX_TICKETS) * 100}% - 8px)`,
-                top: '50%',
-                transform: 'translateY(-50%)',
-              }}
-            />
-
-            {/* Input slider invizibil dar funcțional */}
-            <input
-              type="range"
-              min={1}
-              max={MAX_TICKETS}
-              value={tickets}
-              onChange={(e) => onTicketsChange(Number(e.target.value))}
-              className="absolute top-0 left-0 w-full h-4 opacity-0 z-30 cursor-pointer"
-            />
+            >
+              {tickets} de bilete
+            </div>
           </div>
-
 
           {/* Plus */}
-          <button onClick={() => onTicketsChange(Math.min(500, tickets + 1))} className="py-1 px-3 flex items-center justify-center rounded-full border border-gray-600 shadow-md bg-gradient-to-b from-black via-[#121212] to-[#161616] hover:via-[#1a1a1a] transition-all cursor-pointer">+</button>
-
-          {/* Indicator deasupra bulinei */}
-          <div
-            className="absolute -top-8 text-xs text-white bg-slate-800 px-2 py-1 rounded z-30 transition duration-300"
-            style={{
-              left: `${(tickets / MAX_TICKETS) * 100}%`,
-              transform: 'translateX(-50%)',
-            }}
+          <button
+            onClick={() => onTicketsChange(Math.min(500, tickets + 1))}
+            className="py-1 px-3 flex items-center justify-center rounded-full border border-gray-600 shadow-md bg-gradient-to-b from-black via-[#121212] to-[#161616] hover:via-[#1a1a1a] transition-all cursor-pointer"
           >
-            {tickets} de bilete
-          </div>
-
-
+            +
+          </button>
         </div>
 
-
         {/* Participă acum button */}
-        <div className='flex align-middle justify-center'>
-          <button
-            className="mt-6 w-[84%] flex align-middle justify-center cursor-pointer  bg-[linear-gradient(to_bottom,rgb(123,0,0,1),rgba(54,54,54,0.1))] hover:brightness-120 text-lg font-medium py-2 rounded-xl transition"
-          >
+        <div className="flex align-middle justify-center">
+          <button className="mt-6 w-[84%] flex align-middle justify-center cursor-pointer  bg-[linear-gradient(to_bottom,rgb(123,0,0,1),rgba(54,54,54,0.1))] hover:brightness-120 text-lg font-medium py-2 rounded-xl transition">
             Participă acum – £{(tickets * 2.5).toFixed(2)}
           </button>
         </div>

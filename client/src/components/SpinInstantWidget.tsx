@@ -27,7 +27,7 @@ export default function SpinInstantWidget({
   const [chance, setChance] = useState<number>(0);
 
   useEffect(() => {
-    const pct = Math.min(80, (tickets / 500) * 80);
+    const pct = (tickets / 500) * 100;
     setChance(Math.round(pct));
   }, [tickets]);
 
