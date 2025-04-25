@@ -7,9 +7,9 @@ interface EntryWidgetProps {
 }
 
 const brands = ["Audi", "Porsche", "BMW"];
-const correctAnswer = 'Porsche';
+const correctAnswer = "Porsche";
 const MAX_TICKETS_AVAILABLE = 500;
-const MAX_TICKETS = 500 * 100 / 70;
+const MAX_TICKETS = (500 * 100) / 70;
 
 const PRICE = 2.5;
 
@@ -18,7 +18,7 @@ export default function EntryWidget({
   onTicketsChange,
 }: EntryWidgetProps) {
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
-  
+
   return (
     <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit m-0 mx-auto self-start">
       <div className="p-6 bg-gradient-to-b from-[#141414] to-[#1b1b1b] rounded-xl w-[45vw] mx-auto">
@@ -41,14 +41,12 @@ export default function EntryWidget({
             >
               <button
                 onClick={() => setSelectedBrand(b)}
-                className={`
-    w-full h-full text-lg font-light px-5 py-5 rounded-md transition duration-200 cursor-pointer
-    ${
-      selectedBrand === b
-        ? "bg-gradient-to-b from-[#141414] to-[#1b1b1b] text-white"
-        : "bg-[rgb(58,58,58)] hover:bg-[rgb(68,68,68)] text-white"
-    }
-  `}
+                className={`w-full h-full text-lg font-light px-5 py-5 rounded-md transition duration-200 cursor-pointer
+                ${
+                  selectedBrand === b
+                    ? "bg-gradient-to-b from-[#141414] to-[#1b1b1b] text-white"
+                    : "bg-[rgb(58,58,58)] hover:bg-[rgb(68,68,68)] text-white"
+                }`}
               >
                 {b}
               </button>
@@ -61,7 +59,7 @@ export default function EntryWidget({
           {/* Minus */}
           <button
             onClick={() => onTicketsChange(Math.max(1, tickets - 1))}
-            className="w-12 h-12 flex items-center justify-center rounded-md text-2xl border border-gray-600 shadow-md bg-gradient-to-b from-black via-[#121212] to-[#161616] hover:via-[#1a1a1a] transition-all cursor-pointer"
+            className="w-12 h-12 flex items-center justify-center rounded-md text-2xl border border-gray-600 shadow-md bg-gradient-to-b from-black via-[#121212] to-[#161616] filter transition duration-200 hover:brightness-110 cursor-pointer"
           >
             −
           </button>
@@ -85,17 +83,20 @@ export default function EntryWidget({
 
           {/* Plus */}
           <button
-            onClick={() => onTicketsChange(Math.min(MAX_TICKETS_AVAILABLE, tickets + 1))}
-            className="w-12 h-12 flex items-center justify-center rounded-md text-2xl border border-gray-600 shadow-md bg-gradient-to-b from-black via-[#121212] to-[#161616] hover:via-[#1a1a1a] transition-all cursor-pointer"
+            onClick={() =>
+              onTicketsChange(Math.min(MAX_TICKETS_AVAILABLE, tickets + 1))
+            }
+            className="w-12 h-12 flex items-center justify-center rounded-md text-2xl border border-gray-600 shadow-md bg-gradient-to-b from-black via-[#121212] to-[#161616] filter transition duration-200 hover:brightness-110 cursor-pointer"
           >
             +
           </button>
         </div>
+
         <div className="flex flex-wrap w-full items-center justify-center gap-2 mt-16">
           {/* Minus */}
           <button
             onClick={() => onTicketsChange(Math.max(1, tickets - 1))}
-            className="py-1 px-3 flex items-center justify-center rounded-full border border-gray-600 shadow-md bg-gradient-to-b from-black via-[#121212] to-[#161616] hover:via-[#1a1a1a] transition-all cursor-pointer"
+            className="py-1 px-3 flex items-center justify-center rounded-full border border-gray-600 shadow-md bg-gradient-to-b from-black via-[#121212] to-[#161616] filter transition duration-200 hover:brightness-110 cursor-pointer"
           >
             −
           </button>
@@ -123,7 +124,9 @@ export default function EntryWidget({
               <div
                 className="absolute w-4 h-12 rounded-full bg-white z-20"
                 style={{
-                  left: `calc(${(tickets / MAX_TICKETS_AVAILABLE) * 100}% - 8px)`,
+                  left: `calc(${
+                    (tickets / MAX_TICKETS_AVAILABLE) * 100
+                  }% - 8px)`,
                   top: "50%",
                   transform: "translateY(-50%)",
                 }}
@@ -136,7 +139,6 @@ export default function EntryWidget({
                 max={MAX_TICKETS_AVAILABLE}
                 value={tickets}
                 onChange={(e) => onTicketsChange(Number(e.target.value))}
-            
                 className="absolute top-0 left-0 w-full h-4 opacity-0 z-30 cursor-pointer"
               />
             </div>
@@ -156,7 +158,7 @@ export default function EntryWidget({
           {/* Plus */}
           <button
             onClick={() => onTicketsChange(Math.min(500, tickets + 1))}
-            className="py-1 px-3 flex items-center justify-center rounded-full border border-gray-600 shadow-md bg-gradient-to-b from-black via-[#121212] to-[#161616] hover:via-[#1a1a1a] transition-all cursor-pointer"
+            className="py-1 px-3 flex items-center justify-center rounded-full border border-gray-600 shadow-md bg-gradient-to-b from-black via-[#121212] to-[#161616] filter transition duration-200 hover:brightness-110 cursor-pointer"
           >
             +
           </button>

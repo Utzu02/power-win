@@ -149,7 +149,7 @@ export const CompetitionInfo: FC<Props> = ({
             className="absolute mt-[-90px] flex-row justify-center align-middle top-0 transform z-20"
             style={{ left: `calc(${percent}% - 5.5px)` }}
           >
-              <div className="text-2xl font-small ml-[-35px] z-20 tracking-tight">
+              <div className="text-2xl ultralight ml-[-35px] z-20 tracking-wide">
                 {percent.toFixed(2).replace('.', ',')}%
               </div>
               <svg width="3" height="45" viewBox="0 0 4 60" fill="none" xmlns="http://www.w3.org/2000/svg">
