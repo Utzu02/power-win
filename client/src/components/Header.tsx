@@ -37,7 +37,7 @@ export const Header = () => (
       {/* LOGO LEFT */}
       <Link to="/" className="flex items-center gap-3 shrink-0">
         <img src={logo} alt="PowerWin" className="w-[90px] h-auto" />
-        <span className="hidden sm:inline text-3xl logofont text-black font-400">POWER&nbsp;WIN</span>
+        <span className="hidden sm:inline text-2xl logofont text-black font-400">POWER&nbsp;WIN</span>
       </Link>
 
       {/* NOTCH NAV CENTERED */}
