@@ -23,7 +23,7 @@ export default function RafflePage() {
       </div>
 
       {/* Al doilea rând: Spin + selectare produse + Instant Win */}
-      <div className='flex justify-center align-middle'>
+      <div className='flex flex-wrap justify-center align-middle'>
       <SpinInstantWidget
         tickets={tickets}
         selectedProduct={selectedProduct}
