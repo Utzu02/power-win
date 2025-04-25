@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/Group.svg";
+import downArrow from "../assets/downArrow.png";
 
 /* ─── SVG ICONS ──────────────────────────────────────────── */
 const Wallet = ({ s = 16 }: { s?: number }) => (
@@ -46,7 +47,7 @@ export const Header = () => (
              rounded-b-[60px] border-t-0 mt-[-5px] rounded-t-none shadow-[0_4px_8px_rgba(0,0,0,0.2)]"`}>
         {[
           ["Home", "/competitions"],
-          ["Competitions", "/"],
+          ["Competitions", "/", downArrow],
           ["Winners", "/winners"],
           ["Referral Win", "/referral"],
         ].map(([label, path]) => (
@@ -62,7 +63,12 @@ export const Header = () => (
               ].join(" ")
             }
           >
-            {label}
+              <span className="inline-flex items-center gap-2">
+              {label}
+              {label === "Competitions" && (
+                <img src={downArrow} alt="" className="w-auto h-2" />
+              )}
+              </span>
           </NavLink>
         ))}
       </nav>
