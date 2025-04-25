@@ -41,7 +41,7 @@ export const ImageCarousel: FC<Props> = ({ images }) => {
             key={url}
             onClick={() => setIdx(i)}
             className={cn(
-              "w-20 h-14 rounded-lg overflow-hidden backdrop-blur-md border border-white/10 transition ring-offset-2",
+              "w-20 h-14 cursor-pointer rounded-lg overflow-hidden backdrop-blur-md border border-white/10 transition ring-offset-2",
               idx === i ? "ring-2 ring-white" : "opacity-70 hover:opacity-100"
             )}
           >

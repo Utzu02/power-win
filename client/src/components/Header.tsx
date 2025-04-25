@@ -33,17 +33,17 @@ const pill = "rounded-bl-[40px] rounded-br-[40px] border border-white/20 bg-card
 
 export const Header = () => (
   <header className="w-full pl-12 pr-6 text-white mb-12">
-    <div className="flex items-center justify-between gap-8">
+    <div className="flex h-full items-center justify-between gap-8">
       {/* LOGO LEFT */}
-      <Link to="/" className="flex items-center gap-3 shrink-0">
+      <Link to="/" className="flex items-center pt-4 gap-3 shrink-0">
         <img src={logo} alt="PowerWin" className="w-[90px] h-auto" />
         <span className="hidden sm:inline text-2xl logofont text-black font-400">POWER&nbsp;WIN</span>
       </Link>
 
       {/* NOTCH NAV CENTERED */}
 
-      <nav className={`flex gap-6 px-8 pb-4 mt-[-24px] ${pill} justify-center bg-stone-900`}>
-
+      <nav className={`flex justify-center items-center gap-6 px-8 pt-4 pb-4 h-full border border-white/20 bg-[#1d1d1d] 
+             rounded-b-[60px] border-t-0 mt-[-5px] rounded-t-none shadow-[0_4px_8px_rgba(0,0,0,0.2)]"`}>
         {[
           ["Home", "/competitions"],
           ["Competitions", "/"],
@@ -55,10 +55,10 @@ export const Header = () => (
             to={path}
             className={({ isActive }) =>
               [
-                "px-8 py-4 text-base transition-colors border-1 border-white",
+                "px-6 py-4 flex items-center text-base transition-colors border-1 border-white",
                 isActive
-                  ? "bg-white/30 text-black rounded-full py-2"
-                  : "text-neutral-300 bg-white/7.5 hover:bg-white/10 hover:text-white rounded-full py-2",
+                  ? "bg-white/30 text-black rounded-full"
+                  : "text-neutral-300 bg-white/7.5 hover:bg-white/10 hover:text-white rounded-full",
               ].join(" ")
             }
           >
