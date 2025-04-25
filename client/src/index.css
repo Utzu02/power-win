@@ -76,7 +76,22 @@ body {
   font-family: 'gilroy-regular', sans-serif;
 }
 
-body p 
+body span 
+{
+  font-family: 'gilroy-medium', sans-serif;
+}
+
+.regular 
+{
+  font-family: 'gilroy-regular', sans-serif;
+}
+
+.medium 
+{
+  font-family: 'gilroy-medium', sans-serif;
+}
+
+.ultralight
 {
   font-family: 'gilroy-ultralight', sans-serif;
 }
@@ -86,4 +101,9 @@ body p
 }
 .logofont {
   font-family: 'bohme', sans-serif;
+}
+
+.percentage-bar 
+{
+  margin: 0 !important;
 }

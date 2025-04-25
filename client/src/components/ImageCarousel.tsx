@@ -89,7 +89,7 @@ export const ImageCarousel: FC<Props> = ({ images }) => {
 
         {/* Preț centrat */}
         <div className="absolute top-75 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-[1.5px] px-8 py-4 rounded-full shadow-md text-white text-5xl border-white/40">
-          <p>£2.50</p>
+          <p className="ultralight">£2.50</p>
         </div>
       </div>
       {showModal && (

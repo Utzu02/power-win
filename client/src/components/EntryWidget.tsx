@@ -7,6 +7,7 @@ interface EntryWidgetProps {
 }
 
 const brands = ["Audi", "Porsche", "BMW"];
+const correctAnswer = 'Porsche';
 const MAX_TICKETS = 500;
 
 export default function EntryWidget({
@@ -14,10 +15,10 @@ export default function EntryWidget({
   onTicketsChange,
 }: EntryWidgetProps) {
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
-
+  
   return (
-    <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit mt-10">
-      <div className="p-6 bg-gradient-to-b from-[#141414] to-[#1b1b1b] rounded-xl h-full w-[45vw]">
+    <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit m-0 mx-auto self-start">
+      <div className="p-6 bg-gradient-to-b from-[#212121] to-[#242424] rounded-xl w-[45vw] mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-light">Ce brand este această mașină?</h2>
@@ -87,7 +88,7 @@ export default function EntryWidget({
             +
           </button>
         </div>
-        <div className="flex flex-wrap w-full items-center justify-center">
+        <div className="flex flex-wrap w-full items-center justify-center gap-2 mt-16">
           {/* Minus */}
           <button
             onClick={() => onTicketsChange(Math.max(1, tickets - 1))}
@@ -99,7 +100,7 @@ export default function EntryWidget({
           {/* Slider with bubble */}
           <div className="relative flex items-center space-x-4 flex-1">
             {/* Container slider */}
-            <div className="relative w-full h-7 overflow-visible">
+            <div className="percentage-bar relative w-full h-7 overflow-visible">
               {/* Linii verticale (tick marks) */}
               <div
                 className="absolute inset-0 z-0 pointer-events-none"
@@ -111,7 +112,7 @@ export default function EntryWidget({
 
               {/* Bara colorată (valoare) */}
               <div
-                className="absolute top-0 left-0 h-full rounded-md z-10 bg-gradient-to-r border border-gray-200 from-gray-400 to-red-800 transition-all duration-300"
+                className="absolute top-0 left-0 h-full rounded-md z-10 bg-gradient-to-r border border-gray-200 from-neutral-500 to-red-800 transition-all duration-300"
                 style={{ width: `${(tickets / MAX_TICKETS) * 100}%` }}
               />
 
@@ -138,13 +139,13 @@ export default function EntryWidget({
 
             {/* Indicator deasupra bulinei */}
             <div
-              className="absolute -top-8 text-xs text-white bg-slate-800 px-2 py-1 rounded z-30 transition duration-300"
+              className="absolute -top-10 text-xs text-white bg-[linear-gradient(to_bottom,rgb(100,100,100),rgb(69,68,69))] px-2 py-1 rounded-sm z-30 transition duration-300"
               style={{
                 left: `calc(${(tickets / MAX_TICKETS) * 100}%`,
                 transform: "translateX(-50%)",
               }}
             >
-              {tickets} de bilete
+              <p className="text-nowrap">{tickets} de bilete</p>
             </div>
           </div>
 
