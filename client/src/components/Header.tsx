@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/Group.svg";
-import downArrow from "../assets/downArrow.png";
+import downArrow from "../assets/downArrow.svg";
 
 /* ─── SVG ICONS ──────────────────────────────────────────── */
 const Wallet = ({ s = 16 }: { s?: number }) => (
@@ -78,17 +78,17 @@ export const Header = () => (
         {/* WALLET */}
         <div className="p-[1px] ml-2 rounded-[16px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit transition duration-200">
           <div className="rounded-[16px]  cursor-pointer  bg-card px-4 py-3 text-sm text-left bg-[linear-gradient(90deg,var(--pw-button-primary-color),var(--pw-button-secondary-color))]">
-            <div className="flex items-center gap-2 mb-1">
+            <div className="justify-center flex text-sm gap-2 mb-1">
               <Wallet s={14} />
               <span className="font-medium">Wallet</span>
             </div>
             <div className="flex text-xs gap-2 justify-center">
-              <span className="opacity-100 font-medium">Credit</span>
-              <span className="font-extralight">£125.00</span>
+              <span className="opacity-100 medium">Credit</span>
+              <span className="ultralight">£125.00</span>
             </div>
             <div className="flex text-xs gap-2 justify-center">
-              <span className="opacity-100 font-medium">Rotiri</span>
-              <span className="font-extralight">27</span>
+              <span className="opacity-100 medium">Rotiri</span>
+              <span className="ultralight">27</span>
             </div>
           </div></div>
 
@@ -96,8 +96,8 @@ export const Header = () => (
         <div className="p-[1px] ml-2 rounded-[16px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit transition duration-200">
           <div className="rounded-[16px] cursor-pointer  flex flex-col items-center bg-card px-4 py-3 text-center text-sm bg-[linear-gradient(90deg,var(--pw-button-primary-color),var(--pw-button-secondary-color))]">
             <User s={16} />
-            <div className="font-medium mt-1">John&nbsp;Doe</div>
-            <div className="opacity-60 text-xs font-medium">johndoe@gmail.com</div>
+            <div className="regular text-base mt-1">John&nbsp;Doe</div>
+            <div className="opacity-60 text-xs medium">johndoe@gmail.com</div>
           </div>
         </div>
 
