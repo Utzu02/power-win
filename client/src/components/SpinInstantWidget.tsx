@@ -20,6 +20,8 @@ interface SpinInstantWidgetProps {
   onSelectProduct: (product: string) => void;
 }
 
+const MAX_TICKETS = 500 * 100 / 70;
+
 export default function SpinInstantWidget({
   tickets,
   selectedProduct,
@@ -28,8 +30,8 @@ export default function SpinInstantWidget({
   const [chance, setChance] = useState<number>(0);
 
   useEffect(() => {
-    const pct = (tickets / 500) * 100;
-    setChance(Math.round(pct));
+    const pct = (tickets / MAX_TICKETS) * 100;
+    setChance(pct);
   }, [tickets]);
 
   return (
