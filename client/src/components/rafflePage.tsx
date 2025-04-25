@@ -12,7 +12,7 @@ export default function RafflePage() {
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
 
   return (
-    <div className="mx-4 relative min-h-screen text-white space-y-6">
+    <div className="relative min-h-screen text-white space-y-6">
       {/* Primul rând: EntryWidget și DescriptionWidget, una lângă alta */}
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
         <EntryWidget

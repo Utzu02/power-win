@@ -16,8 +16,8 @@ export default function EntryWidget({
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
 
   return (
-    <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit mt-10 mx-auto">
-      <div className="p-6 bg-gradient-to-b from-[#212121] to-[#242424] rounded-xl h-full w-[45vw] mx-auto">
+    <div className="p-[1px] rounded-[10px] bg-[linear-gradient(to_bottom,rgb(120,120,120),rgba(255,255,255,0.15))] w-fit mt-10">
+      <div className="p-6 bg-gradient-to-b from-[#141414] to-[#1b1b1b] rounded-xl h-full w-[45vw]">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-light">Ce brand este această mașină?</h2>
@@ -159,7 +159,7 @@ export default function EntryWidget({
 
         {/* Participă acum button */}
         <div className="flex align-middle justify-center">
-          <button className="mt-6 w-[84%] flex align-middle justify-center cursor-pointer  bg-[linear-gradient(to_bottom,rgb(123,0,0,1),rgba(54,54,54,0.1))] hover:brightness-120 text-lg font-medium py-2 rounded-xl transition">
+          <button className="mt-6 w-[84%] flex align-middle justify-center cursor-pointer  bg-[linear-gradient(to_bottom,rgb(200,0,0,1),rgba(54,54,54,0.1))] hover:brightness-120 text-lg font-medium py-2 rounded-xl transition">
             Participă acum – £{(tickets * 2.5).toFixed(2)}
           </button>
         </div>

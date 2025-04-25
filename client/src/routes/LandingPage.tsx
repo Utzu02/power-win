@@ -52,44 +52,44 @@ export default function LandingPage() {
   return (
     <div className="">
       <Header />
+      <div className="relative left-[50%] translate-x-[-50%] w-[92vw]">
+        <main className="flex">
+          <section className="space-y-8 w-full">
+            <div className="flex flex-col md:flex-row items-start">
+              {/* Text + padding */}
+              <div className="flex-1 w-[45vw]">
+                <CompetitionInfo
+                  title={mockCompetition.title}
+                  alternativeCash={mockCompetition.alternativeCash}
+                  endsAt={mockCompetition.endsAt}
+                  totalTickets={mockCompetition.totalTickets}
+                  soldTickets={mockCompetition.soldTickets}
+                />
+              </div>
 
-      <main className="flex max-w-[100vw]">
-        <section className="space-y-8 w-full px-12">
-          <div className="flex flex-col md:flex-row items-start">
-            {/* Text + padding */}
-            <div className="flex-1 w-[45vw]">
-              <CompetitionInfo
-                title={mockCompetition.title}
-                alternativeCash={mockCompetition.alternativeCash}
-                endsAt={mockCompetition.endsAt}
-                totalTickets={mockCompetition.totalTickets}
-                soldTickets={mockCompetition.soldTickets}
-              />
+              {/* Carousel larger */}
+              <div className="w-[45vw]">
+                <ImageCarousel images={mockCompetition.images} />
+              </div>
             </div>
 
-            {/* Carousel larger */}
-            <div className="w-[45vw]">
-              <ImageCarousel images={mockCompetition.images} />
-            </div>
-          </div>
 
+          </section>
+        </main>
 
+        <section className="flex justify-center align-middle">
+          <RafflePage />
         </section>
-      </main>
 
-      <section className="flex justify-center align-middle">
-        <RafflePage />
-      </section>
-
-      <div className="flex mx-12 flex-wrap mb-[15vh]">
-        <div className="flex-1 flex justify-baseline">
-          <PowerWin />
-        </div>
-        <div className="flex-1 flex justify-end">
-          <SpinWinModal />
+        <div className="flex flex-wrap mb-[15vh]">
+          <div className="flex-1 flex justify-baseline">
+            <PowerWin />
+          </div>
+          <div className="flex-1 flex justify-end">
+            <SpinWinModal />
+          </div>
         </div>
       </div>
-
 
 
       <Footer />
